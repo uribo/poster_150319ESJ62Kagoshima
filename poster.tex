@@ -1,4 +1,4 @@
-\documentclass[a0, 30pt, plainboxedsections]{sciposter} % Available size are 14, 17, 20, 25, 30, 36...
+\documentclass[a0, 36pt, plainboxedsections]{sciposter} % Available size are 14, 17, 20, 25, 30, 36...
 \usepackage{zxjatype}
 \setjamainfont{YuGo-Bold}
 \usepackage{fontspec, fontawesome}
@@ -8,27 +8,22 @@
 \usepackage{amsmath, amssymb}
 \usepackage{multicol}
 \usepackage{graphicx}
-\usepackage{color}
-\usepackage[american]{babel} %american, english
+\usepackage{color, xcolor}
+%\usepackage[american]{babel} %american, english
 %\usepackage[ansinew]{inputenc}
 %\usepackage[Mandalore]{sciposterpp}
 \usepackage{setspace}
 \usepackage{wasysym}
 \usepackage[T1]{fontenc}
-\usepackage{xcolor}
 
 \renewcommand{\authorsize}{\huge} % title, author, inst
 \renewcommand{\baselinestretch}{1.4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\definecolor{mainCol}{rgb}{1,1,1} % BACKGROUND
-\definecolor{BoxCol}{rgb}{0.9,0.9,1}
+\definecolor{mainCol}{HTML}{FFFFFF} % BACKGROUND
+\definecolor{BoxCol}{HTML}{84C0CC}
 \definecolor{TextCol}{HTML}{469B9A}
-\definecolor{SectionCol}{rgb}{0,0,0.5}
+\definecolor{SectionCol}{HTML}{FFFFFF}
 %\definecolor{ShadeCol}{rgb}{.9,.95,.9}
-%%%%%%%%%%%%
-\definecolor{lightpurple}{rgb}{.9,.9,1}
-\definecolor{navy}{rgb}{0,0,0.6}
-\definecolor{blue}{rgb}{0,0,.9}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{函南原生林を構成する樹種の株構造:\\葉群配置戦略としての多様な萌芽性}
 \author{\underline{瓜生真也}, 鄭 欣怡, 酒井暁子}
@@ -38,31 +33,38 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \conference{150319 日本生態学会第62回全国大会＠鹿児島}
-
 \maketitle
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{multicols}{2}
-
 \section*{\huge{はじめに}}
 
-樹木の多幹性は種の生活型や個体の生育環境に応じて多様である。その背景には、林冠に到達する種の多幹化は樹高成長の妨げとなるが、林冠下では複数の萌芽幹からなる株構造が受光効率を促進するという２面性がある。こうした例は実際に、いくつかの種で知られるが、森林樹木群集を対象に株構造と樹高との関係を明らかにした例はわずかである。また複数の幹からなる株構造では、個体内での自己被陰が問題になると考えられる。そこで本研究では静岡県函南原生林に生育する25樹種の成木を対象に、株を構成する幹の樹高と各幹の被陰状態の関係を調べ、次の仮説について検証した。すなわち、複数の幹をもつ種は1樹高が低くなり、2自己被陰の影響を軽減できる葉群配置を行う、である。
+樹木の多幹性は種の生活型や個体の生育環境に応じて多様である。その背景には、林冠に到達する種の多幹化は樹高成長の妨げとなるが、林冠下では複数の萌芽幹からなる株構造が受光効率を促進するという２面性がある。
 
-複数の幹をもつ割合は０から100\%と株構造は種間で大きく異なり、１個体あたりの平均幹数は０から８本であった。各種の平均樹高と複幹率には有意な負の相関がみられた。この傾向は系統独立対比による解析でも同様であった。この結果は森林樹木の株構造は系統関係に依存せず、多幹化と高木化は背反的に進化していることを意味する。また多くの萌芽幹は主幹を中心とした個体内の他の幹によって被陰されていたが、全体的には萌芽幹への資源分配率が高い種ほど株内での自己被陰率が下がる傾向があった。以上から両仮説は支持され、より上層で光を獲得する性質と引き換えに、下層でより効率的に光を受ける戦術の一環として多幹性は進化しており、このことが多様な受光体制をもつ樹種の共存に貢献していると理解できる。
+また複数の幹からなる株構造では、個体内での自己被陰が問題になると考えられる。
 
-樹木の多幹性は種の生活型や個体の生育環境に応じて多様である。その背景には、林冠に到達する種の多幹化は樹高成長の妨げとなるが、林冠下では複数の萌芽幹からなる株構造が受光効率を促進するという２面性がある。こうした例は実際に、いくつかの種で知られるが、森林樹木群集を対象に株構造と樹高との関係を明らかにした例はわずかである。また複数の幹からなる株構造では、個体内での自己被陰が問題になると考えられる。そこで本研究では静岡県函南原生林に生育する25樹種の成木を対象に、株を構成する幹の樹高と各幹の被陰状態の関係を調べ、次の仮説について検証した。すなわち、複数の幹をもつ種は1樹高が低くなり、2自己被陰の影響を軽減できる葉群配置を行う、である。
+株を構成する幹の樹高と各幹の被陰状態の関係を調べ、次の仮説について検証した。
 
-複数の幹をもつ割合は０から100\%と株構造は種間で大きく異なり、１個体あたりの平均幹数は０から８本であった。各種の平均樹高と複幹率には有意な負の相関がみられた。この傾向は系統独立対比による解析でも同様であった。この結果は森林樹木の株構造は系統関係に依存せず、多幹化と高木化は背反的に進化していることを意味する。また多くの萌芽幹は主幹を中心とした個体内の他の幹によって被陰されていたが、全体的には萌芽幹への資源分配率が高い種ほど株内での自己被陰率が下がる傾向があった。以上から両仮説は支持され、より上層で光を獲得する性質と引き換えに、下層でより効率的に光を受ける戦術の一環として多幹性は進化しており、このことが多様な受光体制をもつ樹種の共存に貢献していると理解できる。
+複数の幹をもつ種は
 
-複数の幹をもつ割合は０から100\%と株構造は種間で大きく異なり、１個体あたりの平均幹数は０から８本であった。各種の平均樹高と複幹率には有意な負の相関がみられた。この傾向は系統独立対比による解析でも同様であった。この結果は森林樹木の株構造は系統関係に依存せず、多幹化と高木化は背反的に進化していることを意味する。また多くの萌芽幹は主幹を中心とした個体内の他の幹によって被陰されていたが、全体的には萌芽幹への資源分配率が高い種ほど株内での自己被陰率が下がる傾向があった。以上から両仮説は支持され、より上層で光を獲得する性質と引き換えに、下層でより効率的に光を受ける戦術の一環として多幹性は進化しており、このことが多様な受光体制をもつ樹種の共存に貢献していると理解できる。
+\begin{list}{\labelitemi}{\setlength{\itemindent}{2em}} % 箇条書きをインデントする
+ \item 樹高が低くなり
+ \item 自己被陰の影響を軽減できる葉群配置を行う
+\end{list}
 
-\section*{\huge{方法}}
+\section*{\huge{\color{red}{考察・まとめ}}}
 
-複数の幹をもつ割合は０から100\%と株構造は種間で大きく異なり、１個体あたりの平均幹数は０から８本であった。各種の平均樹高と複幹率には有意な負の相関がみられた。この傾向は系統独立対比による解析でも同様であった。この結果は森林樹木の株構造は系統関係に依存せず、多幹化と高木化は背反的に進化していることを意味する。また多くの萌芽幹は主幹を中心とした個体内の他の幹によって被陰されていたが、全体的には萌芽幹への資源分配率が高い種ほど株内での自己被陰率が下がる傾向があった。以上から両仮説は支持され、より上層で光を獲得する性質と引き換えに、下層でより効率的に光を受ける戦術の一環として多幹性は進化しており、このことが多様な受光体制をもつ樹種の共存に貢献していると理解できる。
-
-\subsection*{ddd}
+\end{multicols}
 
 \section*{\huge{結果}}
+
+複数の幹をもつ割合は０から100\%と株構造は種間で大きく異なり、１個体あたりの平均幹数は０から８本であった。各種の平均樹高と複幹率には有意な負の相関がみられた。この傾向は系統独立対比による解析でも同様であった。この結果は森林樹木の株構造は系統関係に依存せず、多幹化と高木化は背反的に進化していることを意味する。また多くの萌芽幹は主幹を中心とした個体内の他の幹によって被陰されていたが、全体的には萌芽幹への資源分配率が高い種ほど株内での自己被陰率が下がる傾向があった。以上から両仮説は支持され、より上層で光を獲得する性質と引き換えに、下層でより効率的に光を受ける戦術の一環として多幹性は進化しており、このことが多様な受光体制をもつ樹種の共存に貢献していると理解できる。
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{/Users/uri/Dropbox/LAB/Research/2013Structure_of_Multi-stemmed_Trees/Slide/talk_150206WS/images/Figure1.pdf}
+		\includegraphics{/Users/uri/Dropbox/LAB/Research/2013Structure_of_Multi-stemmed_Trees/Slide/talk_150206WS/images/Figure2.pdf}
+	\end{center}
+\end{figure}
 
 \begin{figure}[H]
   \begin{center}
@@ -71,9 +73,21 @@
   \end{center}
 \end{figure}
 
-\section*{\huge{考察}}
+\section*{\huge{方法}}
 
-\section*{\huge{まとめ}}
+\begin{multicols}{3}
+
+\subsection*{調査地}
+
+静岡県函南原生林
+
+\subsection*{対象種}
+
+25種
+
+\subsection*{系統独立対比}
+
+\fontspec{Times New Roman}{PIC}
 
 \end{multicols}
 
@@ -81,4 +95,5 @@
 % https://github.com/brunobeltran/MatrixExp
 % https://github.com/thmosqueiro/sciposterpp
 % http://latexbr.blogspot.jp/2011/07/posters-cientificos-no-latex.html
+% http://hikaru.6.ql.bz/memo.php?id=latex#sciposter
 \end{document}
