@@ -1,34 +1,41 @@
 \documentclass[a0, 36pt, plainboxedsections]{sciposter} % Available size are 14, 17, 20, 25, 30, 36...
-\usepackage{zxjatype}
-\setjamainfont{YuGo-Bold}
+\usepackage{zxjatype} \setjamainfont{YuGo-Bold}
 \usepackage{fontspec, fontawesome}
 \usepackage[utf8]{inputenc}
-\usepackage{geometry}
-\geometry{top=3cm, left=6cm}
+\usepackage{geometry} \geometry{top=3cm, left=6cm}
 \usepackage{amsmath, amssymb}
 \usepackage{multicol}
-\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[framemethod = tikz]{mdframed}
 \usepackage{color, xcolor}
 %\usepackage[american]{babel} %american, english
 %\usepackage[ansinew]{inputenc}
 %\usepackage[Mandalore]{sciposterpp}
 \usepackage{setspace}
 \usepackage{wasysym}
+\usepackage[scaled = 0.92]{helvet}
 \usepackage[T1]{fontenc}
+%\renewcommand{\rmdefault}{qtm}
 
 \renewcommand{\authorsize}{\huge} % title, author, inst
 \renewcommand{\baselinestretch}{1.4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define color
 \definecolor{mainCol}{HTML}{FFFFFF} % BACKGROUND
-\definecolor{BoxCol}{HTML}{84C0CC}
+\definecolor{BoxCol}{HTML}{469B9A}
 \definecolor{TextCol}{HTML}{469B9A}
 \definecolor{SectionCol}{HTML}{FFFFFF}
 %\definecolor{ShadeCol}{rgb}{.9,.95,.9}
+\definecolor{Blue1}{HTML}{469B9A} \definecolor{Blue2}{HTML}{84C0CC}
+\definecolor{Orange1}{HTML}{F9B04F}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define font awesome
+\providecommand\faUniv{{\FA\symbol{"F19C}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{函南原生林を構成する樹種の株構造:\\葉群配置戦略としての多様な萌芽性}
-\author{\underline{瓜生真也}, 鄭 欣怡, 酒井暁子}
-\institute{横浜国立大・院・環境情報}
-\email{\faEnvelope suika1127@gmail.com}
+\author{\Large{\faUser \hspace{0.02em} \underline{瓜生真也}, 鄭 欣怡, 酒井暁子 （\faUniv \hspace{0.02em} 横浜国立大・院・環境情報）}}
+%\institute{}
+\email{\faEnvelope \hspace{0.02em} \textit{\fontspec{Times New Roman}{suika1127@gmail.com}}}
 \nologos
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -36,28 +43,53 @@
 \maketitle
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{multicols}{2}
+
 \section*{\huge{はじめに}}
 
-樹木の多幹性は種の生活型や個体の生育環境に応じて多様である。その背景には、林冠に到達する種の多幹化は樹高成長の妨げとなるが、林冠下では複数の萌芽幹からなる株構造が受光効率を促進するという２面性がある。
+樹木の多幹性は種の生活型や個体の生育環境に応じて多様である。林冠に到達する種の多幹化は樹高成長の妨げとなるが、林冠下では複数の萌芽幹からなる株構造が受光効率を促進するという２面性
 
 また複数の幹からなる株構造では、個体内での自己被陰が問題になると考えられる。
 
-株を構成する幹の樹高と各幹の被陰状態の関係を調べ、次の仮説について検証した。
+株を構成する幹の樹高と各幹の被陰状態の関係
 
-複数の幹をもつ種は
+\subsection*{仮説: 複数の幹をもつ種は...}
 
-\begin{list}{\labelitemi}{\setlength{\itemindent}{2em}} % 箇条書きをインデントする
+\begin{list}{\labelitemi}{\setlength{\itemindent}{1em}} % 箇条書きをインデント
  \item 樹高が低くなり
  \item 自己被陰の影響を軽減できる葉群配置を行う
 \end{list}
 
-\section*{\huge{\color{red}{考察・まとめ}}}
+\begin{mdframed}[roundcorner=5pt, align=left, backgroundcolor=Orange1]
+  \centering\huge{\color{white}{まとめ}}
+  
+  \flushleft\normalsize{いろはにほへと}
+\end{mdframed}
+
+
 
 \end{multicols}
 
 \section*{\huge{結果}}
 
-複数の幹をもつ割合は０から100\%と株構造は種間で大きく異なり、１個体あたりの平均幹数は０から８本であった。各種の平均樹高と複幹率には有意な負の相関がみられた。この傾向は系統独立対比による解析でも同様であった。この結果は森林樹木の株構造は系統関係に依存せず、多幹化と高木化は背反的に進化していることを意味する。また多くの萌芽幹は主幹を中心とした個体内の他の幹によって被陰されていたが、全体的には萌芽幹への資源分配率が高い種ほど株内での自己被陰率が下がる傾向があった。以上から両仮説は支持され、より上層で光を獲得する性質と引き換えに、下層でより効率的に光を受ける戦術の一環として多幹性は進化しており、このことが多様な受光体制をもつ樹種の共存に貢献していると理解できる。
+\subsection*{25種の萌芽特性}
+
+複数の幹をもつ割合は０から100\%と株構造は種間で大きく異なり、１個体あたりの平均幹数は０から８本
+
+\subsection*{樹高と萌芽特性}
+
+\begin{list}{\labelitemi}{\setlength{\itemindent}{1em}}
+  \item 各種の平均樹高と複幹率には有意な負の相関がみられた
+  \item この傾向は系統独立対比による解析でも同様
+\end{list}
+
+この結果は森林樹木の株構造は系統関係に依存せず、多幹化と高木化は背反的に進化していることを意味する。
+
+
+\subsection*{幹の被陰状況}
+
+多くの萌芽幹は主幹を中心とした個体内の他の幹によって被陰されていたが、全体的には萌芽幹への資源分配率が高い種ほど株内での自己被陰率が下がる傾向
+
+以上から両仮説は支持され、より上層で光を獲得する性質と引き換えに、下層でより効率的に光を受ける戦術の一環として多幹性は進化しており、このことが多様な受光体制をもつ樹種の共存に貢献していると理解できる。
 
 \begin{figure}
 	\begin{center}
@@ -68,7 +100,7 @@
 
 \begin{figure}[H]
   \begin{center}
-	\includegraphics{Images/neac.pdf}
+	\includegraphics[scale = 5]{Images/neac.pdf}
 	{\small\caption{{\textcolor{blue}{Discrete}} $\rightarrow$ {\textcolor{red}{Continuous}}}}
   \end{center}
 \end{figure}
