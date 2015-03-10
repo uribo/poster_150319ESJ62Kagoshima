@@ -1,5 +1,5 @@
-\documentclass[a0, 30pt, plainboxedsections]{sciposter} % Available size are 14, 17, 20, 25, 30, 36...
-\usepackage{zxjatype} \setjamainfont{YuGo-Bold}
+\documentclass[a0, 36pt, plainboxedsections]{sciposter} % Available size are 14, 17, 20, 25, 30, 36...
+\usepackage{zxjatype} \setjamainfont{YuGo-Bold} %YuGo-Medium
 \usepackage{fontspec, fontawesome}
 \usepackage[utf8]{inputenc}
 %\usepackage{geometry} \geometry{top=1cm, left=2cm, right=6cm}
@@ -17,7 +17,7 @@
 \usepackage[T1]{fontenc}
 %\renewcommand{\rmdefault}{qtm}
 
-\renewcommand{\authorsize}{\huge} % title, author, inst
+\renewcommand{\authorsize}{\Large} % title, author, inst
 \renewcommand{\baselinestretch}{1.4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % define color
@@ -31,9 +31,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % define font awesome
 \providecommand\faUniv{{\FA\symbol{"F19C}}}
+% define mdframed style
+\mdfdefinestyle{section.frame}{outerlinewidth=0, roundcorner=8pt, backgroundcolor=Blue1, linecolor=Blue1}
+
+\mdfdefinestyle{conclusion.frame}{roundcorner=5pt, align=left, backgroundcolor=Orange1,  linecolor=Orange1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{函南原生林を構成する樹種の株構造:\\\Huge{葉群配置戦略としての多様な萌芽性}}
-\author{\Large{\faUser \hspace{0.02em} \underline{瓜生真也}, 鄭 欣怡, 酒井暁子 （\faUniv \hspace{0.02em} 横浜国立大・院・環境情報） \normalsize{\faEnvelope \hspace{0.02em} \textit{\fontspec{Times New Roman}{suika1127@gmail.com}}}}}
+\title{函南原生林を構成する樹種の株構造:\\葉群配置戦略としての多様な萌芽性}
+\author{\faUser \hspace{0.02em} \underline{瓜生真也}, 鄭 欣怡, 酒井暁子 （\faUniv \hspace{0.02em} 横浜国立大・院・環境情報） \normalsize{\faEnvelope \hspace{0.02em} \textit{\fontspec{ComicSansMS}{suika1127@gmail.com}}}}
 %\institute{}
 %\email{}
 \nologos
@@ -44,7 +48,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{multicols}{2}
 
-\section*{\huge{はじめに}}
+\begin{mdframed}[style=section.frame]
+  \centering\huge{\color{white}{\faRocket \vspace{0.02em} はじめに}}
+\end{mdframed}
 
 樹木の多幹性は種の生活型や個体の生育環境に応じて多様である。林冠に到達する種の多幹化は樹高成長の妨げとなるが、林冠下では複数の萌芽幹からなる株構造が受光効率を促進するという２面性
 
@@ -59,17 +65,17 @@
  \item 自己被陰の影響を軽減できる葉群配置を行う
 \end{list}
 
-\begin{mdframed}[roundcorner=5pt, align=left, backgroundcolor=Orange1]
-  \centering\huge{\color{white}{まとめ}}
+\begin{mdframed}[style=conclusion.frame]
+  \centering\huge{\color{white}{\faFlagAlt \vspace{0.02em} まとめ}}
   
   \flushleft\normalsize{いろはにほへと}
 \end{mdframed}
 
-
-
 \end{multicols}
 
-\section*{\huge{結果}}
+\begin{mdframed}[style=section.frame]
+  \centering\huge{\color{white}{\faLightbulb \vspace{0.02em} 結果}}
+\end{mdframed}
 
 \subsection*{25種の萌芽特性}
 
@@ -105,7 +111,9 @@
   \end{center}
 \end{figure}
 
-\section*{\huge{方法}}
+\begin{mdframed}[style=section.frame]
+  \centering\huge{\color{white}{\faWrench \vspace{0.02em} 方法}}
+\end{mdframed}
 
 \begin{multicols}{3}
 
