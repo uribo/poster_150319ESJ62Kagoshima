@@ -1,5 +1,5 @@
 \documentclass[a0, 36pt, plainboxedsections]{sciposter} % Available size are 14, 17, 20, 25, 30, 36...
-\usepackage{zxjatype} \setjamainfont{YuGo-Bold} %YuGo-Medium
+\usepackage{zxjatype} \setjamainfont{YuGo-Medium} %YuGo-Medium
 \usepackage{fontspec, fontawesome}
 \usepackage[utf8]{inputenc}
 %\usepackage{geometry} \geometry{top=1cm, left=2cm, right=6cm}
@@ -14,42 +14,44 @@
 \usepackage{setspace}
 \usepackage{wasysym}
 \usepackage[scaled=0.92]{helvet}
+\usepackage{pifont}
 \usepackage[T1]{fontenc}
-%\renewcommand{\rmdefault}{qtm}
 
+%\renewcommand{\rmdefault}{qtm} % serif font
 \renewcommand{\authorsize}{\Large} % title, author, inst
-\renewcommand{\baselinestretch}{1.4}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\baselinestretch}{1.2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % define color
-\definecolor{mainCol}{HTML}{FFFFFF} % BACKGROUND
+\definecolor{mainCol}{RGB}{255, 255, 250} % BACKGROUND
 \definecolor{BoxCol}{HTML}{469B9A}
 \definecolor{TextCol}{HTML}{469B9A}
 \definecolor{SectionCol}{HTML}{FFFFFF}
 %\definecolor{ShadeCol}{rgb}{.9,.95,.9}
+\definecolor{Black1}{HTML}{0D1412}
 \definecolor{Blue1}{HTML}{469B9A} \definecolor{Blue2}{HTML}{84C0CC}
 \definecolor{Orange1}{HTML}{F9B04F}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % define font awesome
 \providecommand\faUniv{{\FA\symbol{"F19C}}}
 % define mdframed style
 \mdfdefinestyle{section.frame}{outerlinewidth=0, roundcorner=8pt, backgroundcolor=Blue1, linecolor=Blue1}
-
+\mdfdefinestyle{subsection.frame}{outerlinewidth=0, roundcorner=8pt, backgroundcolor=Blue2, linecolor=Blue2}
 \mdfdefinestyle{conclusion.frame}{roundcorner=5pt, align=left, backgroundcolor=Orange1,  linecolor=Orange1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{函南原生林を構成する樹種の株構造:\\葉群配置戦略としての多様な萌芽性}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\textcolor{Orange1}{函南原生林を構成する樹種の株構造:\\葉群配置戦略としての多様な萌芽性}}
 \author{\faUser \hspace{0.02em} \underline{瓜生真也}, 鄭 欣怡, 酒井暁子 （\faUniv \hspace{0.02em} 横浜国立大・院・環境情報） \normalsize{\faEnvelope \hspace{0.02em} \textit{\fontspec{ComicSansMS}{suika1127@gmail.com}}}}
 %\institute{}
 %\email{}
 \nologos
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \conference{150319 日本生態学会第62回全国大会＠鹿児島}
 \maketitle
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{multicols}{2}
 
 \begin{mdframed}[style=section.frame]
-  \centering\huge{\color{white}{\faRocket \vspace{0.02em} はじめに}}
+  \centering\huge\textbf{\color{white}{\faRocket \vspace{0.02em} はじめに}}
 \end{mdframed}
 
 樹木の多幹性は種の生活型や個体の生育環境に応じて多様である。林冠に到達する種の多幹化は樹高成長の妨げとなるが、林冠下では複数の萌芽幹からなる株構造が受光効率を促進するという２面性
@@ -66,74 +68,113 @@
 \end{list}
 
 \begin{mdframed}[style=conclusion.frame]
-  \centering\huge{\color{white}{\faFlagAlt \vspace{0.02em} まとめ}}
+  \centering\huge\textbf{\color{white}{\faFlagAlt \vspace{0.02em} まとめ}}
   
-  \flushleft\normalsize{いろはにほへと}
+  \flushleft\normalsize{
+  森林樹木の株構造は系統関係に依存せず、多幹化と高木化は背反的に進化していることを意味する。
+  より上層で光を獲得する性質と引き換えに、下層でより効率的に光を受ける戦術の一環として多幹性は進化しており、このことが多様な受光体制をもつ樹種の共存に貢献していると理解できる。
+  }
 \end{mdframed}
 
 \end{multicols}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{mdframed}[style=section.frame]
-  \centering\huge{\color{white}{\faLightbulb \vspace{0.02em} 結果}}
+  \centering\huge\textbf{\color{white}{\faLightbulb \vspace{0.02em} 結果}}
 \end{mdframed}
+%\hrulefill
 
 \begin{multicols}{3}
 
-\subsection*{25種の萌芽特性}
+\renewcommand{\baselinestretch}{0.8}
+\begin{mdframed}[style=subsection.frame]
+% 25種の株構造要約
+  \huge\textbf{\color{Black1}{\Large{\ding{192}25種の株構造は種間で大きく異なる}}}
+\end{mdframed}
+\renewcommand{\baselinestretch}{1.2}
 
-複数の幹をもつ割合は０から100\%と株構造は種間で大きく異なり、１個体あたりの平均幹数は０から８本
+複数の幹をもつ割合は０から100\%と、１個体あたりの平均幹数は０から８本
 
-\subsection*{樹高と萌芽特性}
+\columnbreak
+\renewcommand{\baselinestretch}{0.8}
+\begin{mdframed}[style=subsection.frame]
+% 樹高と萌芽特性
+  \huge\textbf{\color{Black1}{\Large{\ding{193}平均樹高と複幹率には\\有意な負の相関がみられた}}}
+\end{mdframed}
+\renewcommand{\baselinestretch}{1.2} %revert baseline
 
 \begin{list}{\labelitemi}{\setlength{\itemindent}{1em}}
-  \item 各種の平均樹高と複幹率には有意な負の相関がみられた
   \item この傾向は系統独立対比による解析でも同様
 \end{list}
 
 この結果は森林樹木の株構造は系統関係に依存せず、多幹化と高木化は背反的に進化していることを意味する。
 
-
-\subsection*{幹の被陰状況}
-
-多くの萌芽幹は主幹を中心とした個体内の他の幹によって被陰されていたが、全体的には萌芽幹への資源分配率が高い種ほど株内での自己被陰率が下がる傾向
-
-以上から両仮説は支持され、より上層で光を獲得する性質と引き換えに、下層でより効率的に光を受ける戦術の一環として多幹性は進化しており、このことが多様な受光体制をもつ樹種の共存に貢献していると理解できる。
-
 \begin{figure}
 	\begin{center}
-		\includegraphics{/Users/uri/Dropbox/LAB/Research/2013Structure_of_Multi-stemmed_Trees/Slide/talk_150206WS/images/Figure1.pdf}
-		\includegraphics{/Users/uri/Dropbox/LAB/Research/2013Structure_of_Multi-stemmed_Trees/Slide/talk_150206WS/images/Figure2.pdf}
+		\includegraphics[scale=0.6]{/Users/uri/Dropbox/LAB/Research/2013Structure_of_Multi-stemmed_Trees/Slide/talk_150206WS/images/Figure1.pdf}
+		\includegraphics[scale=0.6]{/Users/uri/Dropbox/LAB/Research/2013Structure_of_Multi-stemmed_Trees/Slide/talk_150206WS/images/Figure2.pdf}
 	\end{center}
 \end{figure}
 
-\begin{figure}[H]
-  \begin{center}
-	\includegraphics[scale = 5]{images/neac.pdf}
-	{\small\caption{{\textcolor{blue}{Discrete}} $\rightarrow$ {\textcolor{red}{Continuous}}}}
-  \end{center}
-\end{figure}
+\columnbreak
+\renewcommand{\baselinestretch}{0.8}
+\begin{mdframed}[style=subsection.frame]
+% 幹の被陰状況
+  \huge\textbf{\color{Black1}{\Large{\ding{194}萌芽幹への資源分配率が高い種\\ほど株内での自己被陰率が下がる}}}
+\end{mdframed}
+\renewcommand{\baselinestretch}{1.2}
+
+多くの萌芽幹は主幹を中心とした個体内の他の幹によって被陰されていたが、全体的に
 
 \end{multicols}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{mdframed}[style=section.frame]
-  \centering\huge{\color{white}{\faWrench \vspace{0.02em} 方法}}
+  \centering\huge\textbf{\color{white}{\faWrench \vspace{0.02em} 方法}}
 \end{mdframed}
 
-\begin{multicols}{3}
+\begin{multicols}{3}\footnotesize{
 
 \subsection*{調査地}
 
 静岡県函南原生林
 
+人為的撹乱の影響が少ない林分
+
+\begin{figure}
+  \includegraphics[scale=0.16]{/Users/uri/Dropbox/LAB/Research/2012QuercusLHS/Images/Studysite_and_area.pdf}
+\end{figure}
+
 \subsection*{対象種}
 
-25種
+調査プロット内で個体数の多い25種（14科17属）
 
-\subsection*{系統独立対比}
+\begin{list}{\labelitemi}{\setlength{\itemindent}{1em}}
+  \item 落葉樹... 15種
+  \item 常緑樹... 10種
+\end{list}
 
-\fontspec{Times New Roman}{PIC}
+\columnbreak
+\subsection*{測定項目}
+主幹
 
-\end{multicols}
+\begin{list}{\labelitemi}{\setlength{\itemindent}{1em}}
+  \item 樹高
+  \item 胸高直径
+\end{list}
+
+萌芽幹
+
+
+\begin{list}{\labelitemi}{\setlength{\itemindent}{1em}}
+  \item 樹高
+  \item 基部直径
+  \item 被陰状況
+\end{list}
+
+
+\subsection*{系統独立対比: \fontspec{Times New Roman}{PIC}}
+
+}\end{multicols}
 
 
 % https://github.com/brunobeltran/MatrixExp
