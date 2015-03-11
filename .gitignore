@@ -128,3 +128,5 @@ sympy-plots-for-*.tex/
 
 *.pdf
 .Rproj.user
+
+*.pxm
