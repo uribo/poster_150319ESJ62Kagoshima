@@ -1,4 +1,4 @@
-\documentclass[a0, 36pt, plainboxedsections]{sciposter} % Available size are 14, 17, 20, 25, 30, 36...
+\documentclass[a0, 30pt, plainboxedsections]{sciposter} % Available size are 14, 17, 20, 25, 30, 36...
 \usepackage{zxjatype} \setjamainfont{YuGo-Medium} %YuGo-Medium
 \usepackage{fontspec, fontawesome}
 \usepackage[utf8]{inputenc}
@@ -21,12 +21,9 @@
 \usepackage[T1]{fontenc}
 
 %\renewcommand{\rmdefault}{qtm} % serif font
-\renewcommand{\titlesize}{\Huge}
+%\renewcommand{\titlesize}{\Huge}
 \renewcommand{\authorsize}{\Large} % title, author, inst
 \renewcommand{\baselinestretch}{1.2}
-% http://karat5i.blogspot.jp/2014/10/latex.html
-\renewcommand{\figurename}{図}
-\renewcommand{\tablename}{表}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % define color
 \definecolor{mainCol}{RGB}{255, 255, 250} % BACKGROUND
@@ -47,7 +44,7 @@
 %\captionsetup[figure]{format=plain,labelformat=simple,labelsep=period,font=scriptsize}
 %\captionsetup[table]{format=plain,labelformat=simple,labelsep=period,font=scriptsize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{\textcolor{Blue1}{函南原生林を構成する樹種の株構造:\\\vspace{-0.5em} 葉群配置戦略としての多様な萌芽性}}
+\title{\textcolor{Blue1}{函南原生林を構成する樹種の株構造:\\\vspace{-0.2em} 葉群配置戦略としての多様な萌芽性}}
 \author{\underline{瓜生真也}, 鄭 欣怡, 酒井暁子 （横浜国立大・院・環境情報） \normalsize{\faEnvelope \hspace{0.02em} \fontspec{GillSans-Italic}{suika1127@gmail.com}}}
 %\institute{} \email{}
 \nologos
@@ -109,9 +106,11 @@
 \end{mdframed}
 \renewcommand{\baselinestretch}{1.2}
 
+\subsection*{各種の株構造と全種の萌芽特性の平均および標準偏差}
+
 % from... KNUT-observation-summary.Rmd
-\begin{wraptable}{r}{14em}\caption{調査対象25種の要約。複幹率が高い種順で並べ、\textcolor{Orange1}{上位}および\textcolor{Blue2}{下位}の５種の行を塗りつぶした。}\vspace{-0.6em}
-  \scalebox{0.32}{\begin{tabular}{llrrrrrlll}
+\begin{wraptable}{r}{14.5em}\caption{調査対象25種の要約。複幹率が高い種順で並べ、\textcolor{Orange1}{上位}および\textcolor{Blue2}{下位}の５種の行を塗りつぶした。}\vspace{-0.4em}
+  \scalebox{0.34}{\begin{tabular}{llrrrrrlll}
   \hline
 種名 & 略称 & 個体数 & 複幹率 & 萌芽本数 & 株構造指数 & 幹BA比 & 葉特性 & 生活型 & 標高 \\ 
   \hline
@@ -145,13 +144,13 @@
 \end{wraptable}
 
 \textbf{\underline{複幹率}}{\footnotesize（複幹を持っている個体の割合）}... 43.43$\pm$36.02 (mean$\pm$sd)\\
-{\footnotesize 亜高木のチドリノキ、アブラチャンでは100\%、ブナやケヤキなど、すべての高木落葉樹種は０\%}\\
+{\scriptsize 亜高木のチドリノキ、アブラチャンでは100\%、ブナやケヤキなど、すべての高木落葉樹種は０\%}\\
 \textbf{\underline{萌芽本数}}{\footnotesize（複幹率０\%より高い）}... 2.27$\pm$2.11 (mean$\pm$sd)\\
-{\footnotesize 最大はチドリノキの8.27本}\\
+{\scriptsize 最大はチドリノキの8.27本}\\
 \textbf{\underline{株構造指数}}{\footnotesize（複幹率０\%より高い）}... 0.89$\pm$0.12 (mean$\pm$sd)\\
-\textbf{\underline{幹BA比}}{\footnotesize（複幹率０\%より高い）}... 0.12$\pm$0.16 (mean$\pm$sd)
+\textbf{\underline{萌芽幹BA比}}{\footnotesize（複幹率０\%より高い）}... 0.12$\pm$0.16 (mean$\pm$sd)
 
-\vspace{1em}
+%\vspace{1em}
 \renewcommand{\baselinestretch}{0.8}
 \begin{mdframed}[style=subsection.frame]
 % 幹の被陰状況
@@ -159,17 +158,25 @@
 \end{mdframed}
 \renewcommand{\baselinestretch}{1.2}
 
-多くの萌芽幹は主幹を中心とした個体内の他の幹によって被陰される
-% Shade conditionとAUCだけの図にする
-% 萌芽幹の被陰状況を示す図（必要？）
+
+\subsection*{複幹率５\%以上の17種を対象とした幹の被陰状況と萌芽性}
+
+多くの萌芽幹は主幹を中心とした個体内の他の幹によって被陰されていた。一方で萌芽性が高い種ほど自己被陰の割合が減少する傾向が系統に関わらずみられた。
+
+\begin{multicols}{2}
 
 \begin{figure}
 	\centering
-		\includegraphics[scale=0.4]{images/fig3self_shade_ratio_barplot.pdf}
-				
-		\includegraphics[scale=0.4]{images/fig4self_shad_ssi_cor.pdf}
-		\includegraphics[scale=0.4]{images/fig5self_shad_ssi_cor_pic.pdf}
+		\includegraphics[scale=1.5]{images/fig3self_shade_ratio_barplot.pdf}
 \end{figure}
+
+\columnbreak
+\begin{figure}
+	\centering				
+		\includegraphics[scale=0.8]{images/fig4self_shad_ssi_cor.pdf}
+		\includegraphics[scale=0.8]{images/fig5self_shad_ssi_cor_pic.pdf}
+\end{figure}
+\end{multicols}
 
 \columnbreak
 \renewcommand{\baselinestretch}{0.8}
@@ -179,18 +186,18 @@
 \end{mdframed}
 \renewcommand{\baselinestretch}{1.2} %revert baseline
 
-樹高に対する萌芽特性との関係（Spearmanの順位相関係数）
+\subsection*{樹高と萌芽特性との関係（Spearmanの順位相関係数）}
 
 \begin{figure}
 	\centering
-		\includegraphics[scale=1.0]{images/fig1height_spr_cor.pdf}
+		\includegraphics[scale=2.0]{images/fig1height_spr_cor.pdf}
 \end{figure}
 
 系統独立対比による解析でも同様の傾向を検出
 
 \begin{figure}
 	\centering
-	　　\includegraphics[scale=1.0]{images/fig2height_spr_cor_pic.pdf}
+	　　\includegraphics[scale=2.0]{images/fig2height_spr_cor_pic.pdf}
 \end{figure}
 
 \end{multicols}
