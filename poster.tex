@@ -20,6 +20,7 @@
 \usepackage[T1]{fontenc}
 
 %\renewcommand{\rmdefault}{qtm} % serif font
+\renewcommand{\titlesize}{\Huge}
 \renewcommand{\authorsize}{\Large} % title, author, inst
 \renewcommand{\baselinestretch}{1.2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -38,8 +39,8 @@
 \mdfdefinestyle{subsection.frame}{outerlinewidth=0, roundcorner=8pt, backgroundcolor=Blue2, linecolor=Blue2}
 \mdfdefinestyle{conclusion.frame}{outerlinewidth=8, roundcorner=5pt, align=left, backgroundcolor=Orange1!30,  linecolor=Orange1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{\textcolor{Blue1}{函南原生林を構成する樹種の株構造:\\葉群配置戦略としての多様な萌芽性}}
-\author{\faGroup \hspace{0.02em} \underline{瓜生真也}, 鄭 欣怡, 酒井暁子 （\faUniv \hspace{0.02em} 横浜国立大・院・環境情報） \normalsize{\faEnvelope \hspace{0.02em} \fontspec{ComicSansMS}{suika1127@gmail.com}}}
+\title{\textcolor{Blue1}{函南原生林を構成する樹種の株構造:\\\vspace{-0.5em} 葉群配置戦略としての多様な萌芽性}}
+\author{\underline{瓜生真也}, 鄭 欣怡, 酒井暁子 （横浜国立大・院・環境情報） \normalsize{\faEnvelope \hspace{0.02em} \fontspec{GillSans-Italic}{suika1127@gmail.com}}}
 %\institute{} \email{}
 \nologos
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -53,7 +54,7 @@
   \centering\huge\textbf{\color{white}{\faRocket \vspace{0.02em} はじめに}}
 \end{mdframed}
 
-\subsection*{目的: 森林樹木群集を対象に、多幹性の差異に働く要因を明らかにする} % 種の生活型や個体の生育環境に応じて多様な反応を示す多幹性とその決定要因を明らかにする %多幹性を左右すると考えられる仮説を検証し、 %樹木の多幹性が群集に及ぼす効果を評価する %樹木群集における多幹性の進化に働く要因を評価する
+\subsection*{目的: 森林樹木群集を対象に、株構造の差異に働く\\他の性質との関係を明らかにする}
 
 \begin{figure}
   \center\includegraphics[scale=1.0]{images/image.pdf}  
@@ -71,18 +72,18 @@
 
 \columnbreak
 \begin{mdframed}[style=conclusion.frame]
-  \large\textbf{\faFlagAlt \vspace{0.02em} 結論: {多幹性は最大樹高と相反して発達し、多様な受光体制の存在が樹種の共存に貢献している}} %多幹化に伴う
+  \large\textbf{\faFlagAlt \vspace{0.02em} 結論: {萌芽性は最大樹高と相反して発達し、多様な受光体制の存在が樹種の共存に貢献している}} %多幹化に伴う
   \vspace{0.4em}
   \flushleft
   \normalsize{\underline{結果\ding{192}}森林樹木の萌芽性は種によりさまざまであった\\
-  \underline{結果\ding{193}}系統に依存せず、萌芽幹への投資と樹高は負の関係\\
+  \underline{結果\ding{193}}系統に依存せず、樹高と萌芽性は負の関係\\
   }
-  \large{\faHandLeft \vspace{0.02em} 多幹化と高木化は\underline{\textbf{背反的に進化している}}ことを示唆する}
+  \large{\faHandLeft \vspace{0.02em} 多幹化と低木化は\textbf{系統関係に依存するものではない}ことを意味する} % 連動して
   
   \vspace{0.4em}
-  \normalsize{\underline{結果\ding{194}}多くの萌芽幹は自己被陰される。一方、萌芽に多くの資源を配分する種では自己被陰を回避する傾向\\
+  \normalsize{\underline{結果\ding{194}}多くの萌芽幹は自己被陰される。一方、萌芽性が強い種では自己被陰を回避する傾向\\
   }
-  \large{\faHandLeft \vspace{0.02em} 多様な萌芽性は「\underline{\textbf{より上層で光を獲得する性質}}」と「\underline{\textbf{下層でより効率的に光を受ける戦術}}」として葉群配置に影響する
+  \large{\faHandLeft \vspace{0.02em} 多様な萌芽性として「\textbf{より上層で光を獲得する}」と「\textbf{下層でより効率的に光を受ける}」という戦略分化が森林内でみられる
   } % 多幹性は進化
 \end{mdframed}
 \end{multicols}
@@ -102,7 +103,7 @@
 
 \begin{wrapfigure}{r}{14em}
   \scalebox{0.30}{\begin{tabular}{llrrrrlrlrl} \hline
-\rowcolor{Grey1!40}種名 & 略称 & 個体数 & 複幹率 & 萌芽本数 & 幹BA比 & 葉特性 & 最大樹高 & 生活型 & AUC & 主要な標高 \\ \hline
+\rowcolor{Grey1!40}種名 & 略称 & 個体数 & 複幹率 & 萌芽本数 & 幹BA比 & 葉特性 & 最大樹高 & 生活型 & 株構造指数 & 主要な標高 \\ \hline
 \rowcolor{Orange1!30}チドリノキ  &  Ac &  22 & \textbf{\textcolor{Orange1}{100.00}} & \textbf{\textcolor{Orange1}{8.27}} & 0.57 & 落葉樹 & 10.02 & 亜高木 & 0.86 & 700m \\ 
 \rowcolor{Orange1!30}アブラチャン  &  Lp &  31 & \textbf{\textcolor{Orange1}{100.00}} & 5.87 & \textbf{\textcolor{Blue2}{0.38}} & 落葉樹 & 9.26 & 亜高木 & 0.69 & 800m \\ 
 \rowcolor{Orange1!30}ヒイラギ  &  Oh &  22 & 81.80 & 2.50 & 0.91 & 常緑樹 & 8.27 & 亜高木 & 0.91 & 600m \\ 
@@ -131,18 +132,18 @@
   \hline\end{tabular}}
 \end{wrapfigure}
 
-\textbf{\underline{複幹率}}... 平均$\pm$標準偏差\\
+\textbf{\underline{複幹率}}{\footnotesize（複幹を持っている個体の割合）}... 平均$\pm$標準偏差\\
 {\footnotesize 亜高木のチドリノキ、アブラチャンでは100\%、ブナやケヤキなど、すべての高木落葉樹種は０\%}\\
-\textbf{\underline{平均幹数}}... 平均$\pm$標準偏差\\
+\textbf{\underline{平均複幹数}}... 平均$\pm$標準偏差\\
 {\footnotesize 最大はチドリノキの8.27本}\\
-\textbf{\underline{AUC}}... 平均$\pm$標準偏差\\
-\textbf{\underline{主幹と全萌芽幹のBA比}}... 平均$\pm$標準偏差
+\textbf{\underline{株構造指数}}... 平均$\pm$標準偏差\\
+\textbf{\underline{BA比}}{\footnotesize個体内に占める萌芽幹合計BAの比率}... 平均$\pm$標準偏差
 
 \vspace{1em}
 \renewcommand{\baselinestretch}{0.8}
 \begin{mdframed}[style=subsection.frame]
 % 幹の被陰状況
-  \huge\textbf{\color{Black1}{\Large{\ding{194}萌芽幹への資源分配率が高い種ほど株内での自己被陰率が下がる}}}
+  \huge\textbf{\color{Black1}{\Large{\ding{194}萌芽性が強い種ほど株内での自己被陰率が下がる}}}
 \end{mdframed}
 \renewcommand{\baselinestretch}{1.2}
 
@@ -161,7 +162,7 @@
 \renewcommand{\baselinestretch}{0.8}
 \begin{mdframed}[style=subsection.frame]
 % 樹高と萌芽特性
-  \huge\textbf{\color{Black1}{\Large{\ding{193}平均樹高と萌芽特性は強い相関を示す}}}
+  \huge\textbf{\color{Black1}{\Large{\ding{193}樹高が高くなるほど萌芽性が強くなる}}}
 \end{mdframed}
 \renewcommand{\baselinestretch}{1.2} %revert baseline
 
@@ -169,8 +170,8 @@
 
 \textbf{\underline{複幹率}}... \\
 \textbf{\underline{平均幹数}}... \\
-\textbf{\underline{AUC}}... \\
-\textbf{\underline{主幹と全萌芽幹のBA比}}...
+\textbf{\underline{株構造指数}}... \\
+\textbf{\underline{BA比}}...
 
 \begin{figure}
 	\begin{center}
@@ -201,7 +202,7 @@
   \item ３つの標高地点にプロット（1.0ha）を設置
   \begin{itemize}\setlength{\itemindent}{1em}
     \item 常緑樹が優占する600m, 落葉樹優占の800m, \newline 常緑・落葉移行帯の700m
-    \item 胸高直径（DBH） 5cm以上を対象に毎木調査
+    \item 胸高直径（DBH） 5cm以上を対象に毎木調査\footnote{プロットの設置、毎木調査は東京農業大学　武生、現鹿児島大学　澤田らの調査による}
   \end{itemize}
 \end{itemize}
 
@@ -212,6 +213,7 @@
 \subsection*{\small{対象種および対象個体}}
 
 \begin{itemize}\setlength{\itemindent}{1em}
+  \item 各種の個体数が最も多い標高地点でサンプリング
   \item プロット内で個体数の多い25種
   \begin{itemize}\setlength{\itemindent}{1em}
     \item 落葉樹15種、常緑樹10種
@@ -228,7 +230,7 @@
 \end{figure}
 
 
-AUC... 
+株構造指数... 
 
 \columnbreak
 \subsection*{\small{系統解析}}
