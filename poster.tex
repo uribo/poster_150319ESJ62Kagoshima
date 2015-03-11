@@ -17,12 +17,16 @@
 \usepackage{pifont}
 \usepackage{colortbl}
 \usepackage{float, wrapfig}
+\usepackage[format=plain,labelformat=simple,labelsep=period,font=scriptsize]{caption}
 \usepackage[T1]{fontenc}
 
 %\renewcommand{\rmdefault}{qtm} % serif font
 \renewcommand{\titlesize}{\Huge}
 \renewcommand{\authorsize}{\Large} % title, author, inst
 \renewcommand{\baselinestretch}{1.2}
+% http://karat5i.blogspot.jp/2014/10/latex.html
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % define color
 \definecolor{mainCol}{RGB}{255, 255, 250} % BACKGROUND
@@ -38,6 +42,10 @@
 \mdfdefinestyle{section.frame}{outerlinewidth=0, roundcorner=8pt, backgroundcolor=Blue1, linecolor=Blue1}
 \mdfdefinestyle{subsection.frame}{outerlinewidth=0, roundcorner=8pt, backgroundcolor=Blue2, linecolor=Blue2}
 \mdfdefinestyle{conclusion.frame}{outerlinewidth=8, roundcorner=5pt, align=left, backgroundcolor=Orange1!30,  linecolor=Orange1}
+
+% caption
+%\captionsetup[figure]{format=plain,labelformat=simple,labelsep=period,font=scriptsize}
+%\captionsetup[table]{format=plain,labelformat=simple,labelsep=period,font=scriptsize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{\textcolor{Blue1}{函南原生林を構成する樹種の株構造:\\\vspace{-0.5em} 葉群配置戦略としての多様な萌芽性}}
 \author{\underline{瓜生真也}, 鄭 欣怡, 酒井暁子 （横浜国立大・院・環境情報） \normalsize{\faEnvelope \hspace{0.02em} \fontspec{GillSans-Italic}{suika1127@gmail.com}}}
@@ -57,7 +65,7 @@
 \subsection*{目的: 森林樹木群集を対象に、株構造の差異に働く\\他の性質との関係を明らかにする}
 
 \begin{figure}
-  \center\includegraphics[scale=1.0]{images/image.pdf}  
+  \centering\includegraphics[scale=1.0]{images/image.pdf}
 \end{figure}
 % 林冠木の多幹化は樹高成長の妨げ、林冠下では複数の萌芽幹からなる株構造が受光効率を促進という２面性
 %複数の幹からなる株構造では、加えて個体内での自己被陰が問題
@@ -75,7 +83,7 @@
   \large\textbf{\faFlagAlt \vspace{0.02em} 結論: {萌芽性は最大樹高と相反して発達し、多様な受光体制の存在が樹種の共存に貢献している}} %多幹化に伴う
   \vspace{0.4em}
   \flushleft
-  \normalsize{\underline{結果\ding{192}}森林樹木の萌芽性は種によりさまざまであった\\
+  \normalsize{\underline{結果\ding{192}}森林樹木の多くは複数の幹を持っていた\\
   \underline{結果\ding{193}}系統に依存せず、樹高と萌芽性は負の関係\\
   }
   \large{\faHandLeft \vspace{0.02em} 多幹化と低木化は\textbf{系統関係に依存するものではない}ことを意味する} % 連動して
@@ -97,53 +105,57 @@
 \renewcommand{\baselinestretch}{0.8}
 \begin{mdframed}[style=subsection.frame]
 % 25種の株構造
-  \huge\textbf{\color{Black1}{\Large{\ding{192}25種の株構造は種間で大きく異なる}}}
+  \huge\textbf{\color{Black1}{\LARGE{\ding{192}}\Large{25種の株構造は種間で大きく異なる}}}
 \end{mdframed}
 \renewcommand{\baselinestretch}{1.2}
 
-\begin{wrapfigure}{r}{14em}
-  \scalebox{0.30}{\begin{tabular}{llrrrrlrlrl} \hline
-\rowcolor{Grey1!40}種名 & 略称 & 個体数 & 複幹率 & 萌芽本数 & 幹BA比 & 葉特性 & 最大樹高 & 生活型 & 株構造指数 & 主要な標高 \\ \hline
-\rowcolor{Orange1!30}チドリノキ  &  Ac &  22 & \textbf{\textcolor{Orange1}{100.00}} & \textbf{\textcolor{Orange1}{8.27}} & 0.57 & 落葉樹 & 10.02 & 亜高木 & 0.86 & 700m \\ 
-\rowcolor{Orange1!30}アブラチャン  &  Lp &  31 & \textbf{\textcolor{Orange1}{100.00}} & 5.87 & \textbf{\textcolor{Blue2}{0.38}} & 落葉樹 & 9.26 & 亜高木 & 0.69 & 800m \\ 
-\rowcolor{Orange1!30}ヒイラギ  &  Oh &  22 & 81.80 & 2.50 & 0.91 & 常緑樹 & 8.27 & 亜高木 & 0.91 & 600m \\ 
-\rowcolor{Orange1!30}イヌガシ  &  Na &  27 & 81.50 & 4.52 & 0.82 & 常緑樹 & 14.23 & 高木 & 0.96 & 600m \\ 
-\rowcolor{Orange1!30}カマツカ  &  Pv &  20 & 80.00 & 1.55 & 0.79 & 落葉樹 & 6.06 & 低木 & \textbf{\textcolor{Blue2}{0.49}} & 800m \\ 
-ヤブニッケイ  &  Cy &  27 & 77.80 & 2.15 & 0.88 & 常緑樹 & 13.42 & 高木 & 0.88 & 600m \\ 
-アオキ  &  Aj &  21 & 76.20 & 2.81 & 0.82 & 常緑樹 & 4.57 & 低木 & 0.85 & 600m \\ 
-アオハダ  &  Im &  23 & 73.90 & 3.35 & 0.84 & 落葉樹 & 10.84 & 亜高木 & 0.87 & 800m \\ 
-ヒサカキ  &  Ej &  22 & 68.20 & 3.09 & 0.93 & 常緑樹 & 6.72 & 亜高木 & 0.93 & 600m \\ 
-ウラジロガシ  &  Qs &  21 & 66.70 & 1.81 & 0.98 & 常緑樹 & 16.00 & 高木 & 0.95 & 600m \\ 
-シキミ  &  Ia &  30 & 63.30 & 3.40 & 0.97 & 常緑樹 & 8.81 & 亜高木 & 0.96 & 800m \\ 
-イヌツゲ  &  Ic &  26 & 53.80 & 1.38 & 0.99 & 常緑樹 & 6.79 & 亜高木 & 0.95 & 800m \\ 
-マメザクラ  &  Ci &  23 & 47.80 & 1.57 & 0.90 & 落葉樹 & 9.89 & 亜高木 & 0.86 & 700m \\ 
-アカガシ  &  Qa &  27 & 37.00 & 1.44 & 0.91 & 常緑樹 & 17.89 & 高木 & 0.89 & 600m \\ 
-カジカエデ  &  Ad &  25 & 28.00 & 0.84 & 0.97 & 落葉樹 & 12.99 & 亜高木 & 0.90 & 800m \\ 
-シラキ  &  Ns &  25 & 24.00 & 0.60 & 1.00 & 常緑樹 & 7.44 & 亜高木 & 0.98 & 600m \\ 
-タンナサワフタギ  &  Sc &  23 & 13.00 & 0.13 & 0.99 & 落葉樹 & 6.83 & 亜高木 & 0.99 & 800m \\ 
-\rowcolor{Blue2!30}イロハモミジ  &  Ap &  21 & 4.80 & 0.05 & 0.98 & 落葉樹 & 16.41 & 高木 & 0.94 & 600m \\ 
-\rowcolor{Blue2!30}イタヤカエデ  &  Am &  24 & 4.20 & 0.04 & 0.99 & 落葉樹 & 16.91 & 高木 & 1.00 & 700m \\ 
-\rowcolor{Blue2!30}シラキ  &  Nj &  27 & 3.70 & 0.04 & 0.98 & 落葉樹 & 7.48 & 亜高木 & 1.00 & 800m \\ 
-\rowcolor{Blue2!30}ブナ  &  Fc &  27 & 0.00 & 0.00 & 1.00 & 落葉樹 & 23.12 & 高木 & 1.00 & 700m \\ 
-\rowcolor{Blue2!30}ケヤキ  &  Zs &  27 & 0.00 & 0.00 & 1.00 & 落葉樹 & 20.52 & 高木 & 1.00 & 700m \\ 
-\rowcolor{Blue2!30}オオモミジ  &  Aa &  26 & 0.00 & 0.00 & 1.00 & 落葉樹 & 16.27 & 高木 & 1.00 & 700m \\ 
-\rowcolor{Blue2!30}ヒメシャラ  &  Sm &  21 & 0.00 & 0.00 & 1.00 & 落葉樹 & 17.97 & 高木 & 1.00 & 800m \\ 
-\rowcolor{Blue2!30}イヌシデ  &  Ct &  28 & 0.00 & 0.00 & 1.00 & 落葉樹 & 17.64 & 高木 & 1.00 & 800m \\ 
-  \hline\end{tabular}}
-\end{wrapfigure}
+% from... KNUT-observation-summary.Rmd
+\begin{wraptable}{r}{14em}\caption{調査対象25種の要約。複幹率が高い種順で並べ、\textcolor{Orange1}{上位}および\textcolor{Blue2}{下位}の５種の行を塗りつぶした。}\vspace{-0.6em}
+  \scalebox{0.32}{\begin{tabular}{llrrrrrlll}
+  \hline
+種名 & 略称 & 個体数 & 複幹率 & 萌芽本数 & 株構造指数 & 幹BA比 & 葉特性 & 生活型 & 標高 \\ 
+  \hline
+\rowcolor{Orange1!30}チドリノキ & Ac &  22 & 100.00 & 8.27 & 0.86 & 0.43 & 落葉 & 亜高木 & 700m \\ 
+\rowcolor{Orange1!30}アブラチャン & Lp &  31 & 100.00 & 5.87 & 0.69 & 0.62 & 落葉 & 亜高木 & 800m \\ 
+\rowcolor{Orange1!30}ヒイラギ & Oh &  22 & 81.80 & 2.50 & 0.91 & 0.09 & 常緑 & 亜高木 & 600m \\ 
+\rowcolor{Orange1!30}イヌガシ & Na &  27 & 81.50 & 4.52 & 0.96 & 0.18 & 常緑 & 高木 & 600m \\ 
+\rowcolor{Orange1!30}カマツカ & Pv &  20 & 80.00 & 1.55 & 0.49 & 0.21 & 落葉 & 低木 & 800m \\ 
+ヤブニッケイ & Cy &  27 & 77.80 & 2.15 & 0.88 & 0.12 & 常緑 & 高木 & 600m \\ 
+アオキ & Aj &  21 & 76.20 & 2.81 & 0.85 & 0.18 & 常緑 & 低木 & 600m \\ 
+アオハダ & Im &  23 & 73.90 & 3.35 & 0.87 & 0.16 & 落葉 & 亜高木 & 800m \\ 
+ヒサカキ & Ej &  22 & 68.20 & 3.09 & 0.93 & 0.07 & 常緑 & 亜高木 & 600m \\ 
+ウラジロガシ & Qs &  21 & 66.70 & 1.81 & 0.95 & 0.02 & 常緑 & 高木 & 600m \\ 
+シキミ & Ia &  30 & 63.30 & 3.40 & 0.96 & 0.03 & 常緑 & 亜高木 & 800m \\ 
+イヌツゲ & Ic &  26 & 53.80 & 1.38 & 0.95 & 0.01 & 常緑 & 亜高木 & 800m \\ 
+マメザクラ & Ci &  23 & 47.80 & 1.57 & 0.86 & 0.10 & 落葉 & 亜高木 & 700m \\ 
+アカガシ & Qa &  27 & 37.00 & 1.44 & 0.89 & 0.09 & 常緑 & 高木 & 600m \\ 
+カジカエデ & Ad &  25 & 28.00 & 0.84 & 0.90 & 0.03 & 落葉 & 亜高木 & 800m \\ 
+シロダモ & Ns &  25 & 24.00 & 0.60 & 0.98 & 0.00 & 常緑 & 亜高木 & 600m \\ 
+タンナサワフタギ & Sc &  23 & 13.00 & 0.13 & 0.99 & 0.01 & 落葉 & 亜高木 & 800m \\ 
+イロハモミジ & Ap &  21 & 4.80 & 0.05 & 0.94 & 0.02 & 落葉 & 高木 & 600m \\ 
+イタヤカエデ & Am &  24 & 4.20 & 0.04 & 1.00 & 0.01 & 落葉 & 高木 & 700m \\ 
+シラキ & Nj &  27 & 3.70 & 0.04 & 1.00 & 0.02 & 落葉 & 亜高木 & 800m \\ 
+\rowcolor{Blue2!30}ブナ & Fc &  27 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 700m \\ 
+\rowcolor{Blue2!30}ケヤキ & Zs &  27 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 700m \\ 
+\rowcolor{Blue2!30}オオモミジ & Aa &  26 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 700m \\ 
+\rowcolor{Blue2!30}ヒメシャラ & Sm &  21 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 800m \\ 
+\rowcolor{Blue2!30}イヌシデ & Ct &  28 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 800m \\ 
+   \hline
+\end{tabular}}
+\end{wraptable}
 
-\textbf{\underline{複幹率}}{\footnotesize（複幹を持っている個体の割合）}... 平均$\pm$標準偏差\\
+\textbf{\underline{複幹率}}{\footnotesize（複幹を持っている個体の割合）}... 43.43$\pm$36.02 (mean$\pm$sd)\\
 {\footnotesize 亜高木のチドリノキ、アブラチャンでは100\%、ブナやケヤキなど、すべての高木落葉樹種は０\%}\\
-\textbf{\underline{平均複幹数}}... 平均$\pm$標準偏差\\
+\textbf{\underline{萌芽本数}}{\footnotesize（複幹率０\%より高い）}... 2.27$\pm$2.11 (mean$\pm$sd)\\
 {\footnotesize 最大はチドリノキの8.27本}\\
-\textbf{\underline{株構造指数}}... 平均$\pm$標準偏差\\
-\textbf{\underline{BA比}}{\footnotesize個体内に占める萌芽幹合計BAの比率}... 平均$\pm$標準偏差
+\textbf{\underline{株構造指数}}{\footnotesize（複幹率０\%より高い）}... 0.89$\pm$0.12 (mean$\pm$sd)\\
+\textbf{\underline{幹BA比}}{\footnotesize（複幹率０\%より高い）}... 0.12$\pm$0.16 (mean$\pm$sd)
 
 \vspace{1em}
 \renewcommand{\baselinestretch}{0.8}
 \begin{mdframed}[style=subsection.frame]
 % 幹の被陰状況
-  \huge\textbf{\color{Black1}{\Large{\ding{194}萌芽性が強い種ほど株内での自己被陰率が下がる}}}
+  \huge\textbf{\color{Black1}{\LARGE{\ding{194}}\Large{萌芽性が強い種ほど自己被陰率が下がる}}}
 \end{mdframed}
 \renewcommand{\baselinestretch}{1.2}
 
@@ -152,39 +164,33 @@
 % 萌芽幹の被陰状況を示す図（必要？）
 
 \begin{figure}
-	\begin{center}
-		\includegraphics[scale=0.8]{/Users/uri/Dropbox/LAB/Research/2013Structure_of_Multi-stemmed_Trees/Slide/talk_150206WS/images/Figure3.pdf}
-		\includegraphics[scale=0.6]{/Users/uri/Dropbox/LAB/Research/2013Structure_of_Multi-stemmed_Trees/Slide/talk_150206WS/images/Figure4.pdf}
-	\end{center}
+	\centering
+		\includegraphics[scale=0.4]{images/fig3self_shade_ratio_barplot.pdf}
+				
+		\includegraphics[scale=0.4]{images/fig4self_shad_ssi_cor.pdf}
+		\includegraphics[scale=0.4]{images/fig5self_shad_ssi_cor_pic.pdf}
 \end{figure}
 
 \columnbreak
 \renewcommand{\baselinestretch}{0.8}
 \begin{mdframed}[style=subsection.frame]
 % 樹高と萌芽特性
-  \huge\textbf{\color{Black1}{\Large{\ding{193}樹高が高くなるほど萌芽性が強くなる}}}
+  \huge\textbf{\color{Black1}{\LARGE{\ding{193}}\Large{樹高が高くなるほど萌芽性が強くなる}}}
 \end{mdframed}
 \renewcommand{\baselinestretch}{1.2} %revert baseline
 
 樹高に対する萌芽特性との関係（Spearmanの順位相関係数）
 
-\textbf{\underline{複幹率}}... \\
-\textbf{\underline{平均幹数}}... \\
-\textbf{\underline{株構造指数}}... \\
-\textbf{\underline{BA比}}...
-
 \begin{figure}
-	\begin{center}
-		\includegraphics[scale=1.0]{/Users/uri/Dropbox/LAB/Research/2013Structure_of_Multi-stemmed_Trees/Slide/talk_150206WS/images/Figure1.pdf}
-	\end{center}
+	\centering
+		\includegraphics[scale=1.0]{images/fig1height_spr_cor.pdf}
 \end{figure}
 
 系統独立対比による解析でも同様の傾向を検出
 
 \begin{figure}
-	\begin{center}
-	　　\includegraphics[scale=1.0]{/Users/uri/Dropbox/LAB/Research/2013Structure_of_Multi-stemmed_Trees/Slide/talk_150206WS/images/Figure2.pdf}
-	\end{center}
+	\centering
+	　　\includegraphics[scale=1.0]{images/fig2height_spr_cor_pic.pdf}
 \end{figure}
 
 \end{multicols}
@@ -217,7 +223,7 @@
   \item プロット内で個体数の多い25種
   \begin{itemize}\setlength{\itemindent}{1em}
     \item 落葉樹15種、常緑樹10種
-    \item 高木、亜高木、低木
+    \item 高木11種、亜高木12種、低木２種
   \end{itemize}
   \item 各種のDBH上位60 - 90\%の成熟個体
 \end{itemize}
@@ -226,7 +232,8 @@
 \subsection*{\small{測定項目}}
 
 \begin{figure}
-  \center\includegraphics[scale=0.82]{/Users/uri/Dropbox/LAB/Research/2012QuercusLHS/Images/definition_of_basal_sprout.pdf}
+	\centering
+	\includegraphics[scale=0.82]{/Users/uri/Dropbox/LAB/Research/2012QuercusLHS/Images/definition_of_basal_sprout.pdf}
 \end{figure}
 
 
@@ -240,9 +247,11 @@
   \includegraphics[scale=0.8]{/Users/uri/Dropbox/git/Data-analyses/life-history_traits_and_stool_structure/Figure/kn25_phylogenetic_tree_phylogram-1.pdf}
 \end{wrapfigure}
 
-系統樹を作成、
+Phylomatic(Webb and Donoghue 2005)を用いてAPG III系統樹を作成、
 
-解析時、系統独立対比を実施
+解析時、形質間の系統的な偏りを補正するため、系統独立対比を実施
+
+これらの解析はすべてR 3.1.2で実行。
 
 }\end{multicols}
 
