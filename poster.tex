@@ -37,12 +37,9 @@
 \providecommand\faUniv{{\FA\symbol{"F19C}}}
 % define mdframed style
 \mdfdefinestyle{section.frame}{outerlinewidth=0, roundcorner=8pt, backgroundcolor=Blue1, linecolor=Blue1}
-\mdfdefinestyle{subsection.frame}{outerlinewidth=0, roundcorner=8pt, backgroundcolor=Blue2, linecolor=Blue2}
+\mdfdefinestyle{subsection.frame}{outerlinewidth=2, roundcorner=8pt, backgroundcolor=Blue1!10, linecolor=Blue2}
 \mdfdefinestyle{conclusion.frame}{outerlinewidth=8, roundcorner=5pt, align=left, backgroundcolor=Orange1!30,  linecolor=Orange1}
-
-% caption
-%\captionsetup[figure]{format=plain,labelformat=simple,labelsep=period,font=scriptsize}
-%\captionsetup[table]{format=plain,labelformat=simple,labelsep=period,font=scriptsize}
+\mdfapptodefinestyle{subsection.frame}{rightline=true,innerleftmargin=10,innerrightmargin=10,frametitlerule=true,frametitlebackgroundcolor=Blue2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{\textcolor{Blue1}{函南原生林を構成する樹種の株構造:\\\vspace{-0.2em} 葉群配置戦略としての多様な萌芽性}}
 \author{\underline{瓜生真也}, 鄭 欣怡, 酒井暁子 （横浜国立大・院・環境情報） \normalsize{\faEnvelope \hspace{0.02em} \fontspec{GillSans-Italic}{suika1127@gmail.com}}}
@@ -98,18 +95,14 @@
 
 \begin{multicols}{2}
 
-\renewcommand{\baselinestretch}{0.8}
-\begin{mdframed}[style=subsection.frame]
-% 25種の株構造
-  \huge\textbf{\color{Black1}{\LARGE{\ding{192}}\Large{25種の株構造は種間で大きく異なる}}}
-\end{mdframed}
+\renewcommand{\baselinestretch}{0.8}\begin{mdframed}[style=subsection.frame,frametitle={\huge\textbf{\color{Black1}{\LARGE{\ding{192}}\Large{25種の株構造は種間で大きく異なる}}}}]
 \renewcommand{\baselinestretch}{1.2}
 
 \subsection*{各種の株構造と全種の萌芽特性の平均および標準偏差}
 
 % from... KNUT-observation-summary.Rmd
 \begin{wraptable}{r}{14.5em}\caption{調査対象25種の要約。複幹率が高い種順で並べ、\textcolor{Orange1}{上位}および\textcolor{Blue2}{下位}の５種の行を塗りつぶした。}\vspace{-0.4em}
-  \scalebox{0.34}{\begin{tabular}{llrrrrrlll}
+  \scalebox{0.32}{\begin{tabular}{llrrrrrlll}
   \hline
 種名 & 略称 & 個体数 & 複幹率 & 萌芽本数 & 株構造指数 & 幹BA比 & 葉特性 & 生活型 & 標高 \\ 
   \hline
@@ -149,14 +142,12 @@
 \textbf{\underline{株構造指数}}{\footnotesize（複幹率０\%より高い）}... 0.89$\pm$0.12 (mean$\pm$sd)\\
 \textbf{\underline{萌芽幹BA比}}{\footnotesize（複幹率０\%より高い）}... 0.12$\pm$0.16 (mean$\pm$sd)
 
-%\vspace{1em}
-\renewcommand{\baselinestretch}{0.8}
-\begin{mdframed}[style=subsection.frame]
-% 幹の被陰状況
-  \huge\textbf{\color{Black1}{\LARGE{\ding{194}}\Large{萌芽性が強い種ほど自己被陰率が下がる}}}
 \end{mdframed}
-\renewcommand{\baselinestretch}{1.2}
 
+\renewcommand{\baselinestretch}{0.8}
+\begin{mdframed}[style=subsection.frame,frametitle=
+  \huge\textbf{\color{Black1}{\LARGE{\ding{194}}\Large{萌芽性が強い種ほど自己被陰率が下がる}}}]
+\renewcommand{\baselinestretch}{1.2}
 
 \subsection*{複幹率５\%以上の17種を対象とした幹の被陰状況と萌芽性}
 
@@ -176,13 +167,13 @@
 		\includegraphics[scale=0.8]{images/fig5self_shad_ssi_cor_pic.pdf}
 \end{figure}
 \end{multicols}
+\end{mdframed}
 
 \columnbreak
 \renewcommand{\baselinestretch}{0.8}
-\begin{mdframed}[style=subsection.frame]
+\begin{mdframed}[style=subsection.frame,frametitle=
 % 樹高と萌芽特性
-  \huge\textbf{\color{Black1}{\LARGE{\ding{193}}\Large{樹高が高くなるほど萌芽性が強くなる}}}
-\end{mdframed}
+  \huge\textbf{\color{Black1}{\LARGE{\ding{193}}\Large{樹高が高くなるほど萌芽性が強くなる}}}]
 \renewcommand{\baselinestretch}{1.2} %revert baseline
 
 \subsection*{樹高と萌芽特性との関係（Spearmanの順位相関係数）}
@@ -198,6 +189,7 @@
 	\centering
 	　　\includegraphics[scale=2.0]{images/fig2height_spr_cor_pic.pdf}
 \end{figure}
+\end{mdframed}
 
 \end{multicols}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
