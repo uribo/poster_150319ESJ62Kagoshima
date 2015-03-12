@@ -45,8 +45,10 @@
 \setlength{\linewidth}{18pt}
 \setlength{\columnsep}{2cm}
 \def\columnseprulecolor{\color{Grey1}}
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\rightlogo{images/neac.pdf} %/Users/uri/Dropbox/git/root-sucker/Resources/root-sucker-icon.png
+\rightlogo{images/logo.pdf}
 \title{\textcolor{Blue1}{函南原生林を構成する樹種の株構造:\\\vspace{-0.2em} 葉群配置戦略としての多様な萌芽性}}
 \author{\underline{瓜生真也}, 鄭 欣怡, 酒井暁子 （横浜国立大・院・環境情報） \normalsize{\faEnvelope \hspace{0.02em} \fontspec{GillSans-Italic}{suika1127@gmail.com}}}
 %\institute{} \email{}
@@ -173,8 +175,8 @@ APG IIIに基づく25種の系統データを、既存のデータベース情�
 
 \subsection*{各種の株構造と全種の萌芽特性の平均および標準偏差}
 
-\begin{wraptable}{r}{19em}%\caption{調査対象25種の要約。複幹率が高い種順で並べ、上位および下位の５種の行を塗りつぶした。}\vspace{-0.4em}
-  \scalebox{0.42}{\begin{tabular}{llrrrrrlll}
+\begin{wraptable}{r}{19em}\caption{調査対象25種の要約。複幹率が高い種順で並べ、上位および下位の５種の行を塗りつぶした。}\vspace{-0.4em}
+  \scalebox{0.38}{\begin{tabular}{llrrrrrlll}
   \hline
 \rowcolor{white}種名 & 略称 & 個体数 & 複幹率 & 萌芽本数 & 株構造指数 & 幹BA比 & 葉特性 & 生活型 & 標高 \\ 
   \hline
@@ -225,16 +227,26 @@ APG IIIに基づく25種の系統データを、既存のデータベース情�
 
 多くの萌芽幹は個体内の他の幹により被陰されていた。一方で萌芽性が高い種ほど自己被陰の割合が減少する傾向が系統関係に依存せずみられた。
 
+\renewcommand{\baselinestretch}{0.8}
 \begin{figure}
  \begin{minipage}{0.5\hsize}
   \centering
    \includegraphics[scale=1.0]{images/fig3self_shade_ratio_barplot.pdf} % size w1855:h1000
+
+   {\tiny 図３．萌芽幹の被陰状況割合。全体での自己被陰率は\textcolor{red}{高い}。\newline
+   
+   \textbf{\underline{凡例}}... \textcolor{black}{\ding{110}}: 被陰なし、\textcolor{lightgray}{\ding{110}}: 他個体による被陰、\textcolor{white}{\ding{110}}: 自己被陰}
  \end{minipage}
  \begin{minipage}{0.5\hsize}
   \centering
    \includegraphics[scale=1.0]{images/fig4self_shad_ssi_cor.pdf}
+   {\tiny 図４．各種の株構造指数と萌芽幹の自己被陰率との関係。形質値、対比値ともに有意な正の相関関係がみられた（Pearsonの積率相関係数 \textit{P} < 0.05）。
+   
+   \textbf{\underline{凡例}}... 色は\textcolor{Orange1}{落葉樹}:、\textcolor{Blue1}{常緑樹}を示す。\ding{115}: 低木種、\ding{110}: 亜高木種、\ding{108}: 高木種}
  \end{minipage}
 \end{figure}
+\renewcommand{\baselinestretch}{1.2}
+
 
 \end{mdframed}
 
@@ -245,18 +257,22 @@ APG IIIに基づく25種の系統データを、既存のデータベース情�
 
 \subsection*{樹高と萌芽特性との相関関係}
 
-Spearmanの順位相関係数
+%Spearmanの順位相関係数
 
 \begin{figure}
 	\centering
 		\includegraphics[scale=1.0]{images/fig1height_spr_cor.pdf} % w4000;
+		
+	{\tiny 図１．萌芽に関する４つの特性と樹高との関係。すべての組合わせで有意な相関を示した（Spearmanの順位相関 \textit{P} < 0.05... *, \textit{P} < 0.01... **, \textit{P} < 0.01... ***）。
+   
+   \textbf{\underline{凡例}}... 色は\textcolor{Orange1}{落葉樹}:、\textcolor{Blue1}{常緑樹}を示す。\ding{115}: 低木種、\ding{110}: 亜高木種、\ding{108}: 高木種}
 \end{figure}
-
-系統独立対比による解析でも同様の傾向を検出
 
 \begin{figure}
 	\centering\hspace{-2em}
 	　　\includegraphics[scale=1.0]{images/fig2height_spr_cor_pic.pdf}
+	　　
+	　　{\tiny 図２．系統独立対比による萌芽特性と樹高との関係。図１．同様の傾向を検出。萌芽幹BA比を除き、有意な相関関係をもつ。}
 \end{figure}
 
 \end{mdframed}
