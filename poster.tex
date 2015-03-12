@@ -37,14 +37,20 @@
 \providecommand\faUniv{{\FA\symbol{"F19C}}}
 % define mdframed style
 \mdfdefinestyle{section.frame}{outerlinewidth=0, roundcorner=8pt, backgroundcolor=Blue1, linecolor=Blue1}
-\mdfdefinestyle{subsection.frame}{outerlinewidth=2, roundcorner=8pt, backgroundcolor=Blue1!10, linecolor=Blue2}
-\mdfdefinestyle{conclusion.frame}{outerlinewidth=8, roundcorner=5pt, align=left, backgroundcolor=Orange1!30,  linecolor=Orange1}
-\mdfapptodefinestyle{subsection.frame}{rightline=true,innerleftmargin=10,innerrightmargin=10,frametitlerule=true,frametitlebackgroundcolor=Blue2}
+\mdfdefinestyle{subsection.frame}{outerlinewidth=6, roundcorner=8pt, backgroundcolor=Blue1!20, linecolor=Blue2}
+\mdfdefinestyle{conclusion.frame}{outerlinewidth=8, roundcorner=8pt, backgroundcolor=Orange1!30,  linecolor=Orange1}
+\mdfapptodefinestyle{subsection.frame}{rightline=true, innerleftmargin=16, innerrightmargin=16, frametitlerule=true, frametitlebackgroundcolor=Blue2}
+\mdfapptodefinestyle{conclusion.frame}{rightline=true, innerleftmargin=16, innerrightmargin=16, frametitlerule=true, frametitlebackgroundcolor=Orange1}
+% define multicol style
+\setlength{\linewidth}{18pt}
+\setlength{\columnsep}{2cm}
+\def\columnseprulecolor{\color{Grey1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\rightlogo{images/neac.pdf} %/Users/uri/Dropbox/git/root-sucker/Resources/root-sucker-icon.png
 \title{\textcolor{Blue1}{函南原生林を構成する樹種の株構造:\\\vspace{-0.2em} 葉群配置戦略としての多様な萌芽性}}
 \author{\underline{瓜生真也}, 鄭 欣怡, 酒井暁子 （横浜国立大・院・環境情報） \normalsize{\faEnvelope \hspace{0.02em} \fontspec{GillSans-Italic}{suika1127@gmail.com}}}
 %\institute{} \email{}
-\nologos
+%\nologos
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \conference{150319 日本生態学会第62回全国大会＠鹿児島 [PA1-042]}
@@ -53,13 +59,13 @@
 \vspace{-2em}
 \begin{multicols}{2}
 \begin{mdframed}[style=section.frame]
-  \centering\huge\textbf{\color{white}{\faRocket \vspace{0.02em} はじめに}}
+  \centering\huge\textbf{\color{white}{はじめに}}
 \end{mdframed}
 
 \subsection*{目的: 森林樹木群集を対象に、株構造の差異に働く\\他の性質との関係を明らかにする}
 
 \begin{figure}
-  \centering\includegraphics[scale=1.0]{images/image.pdf}
+  \centering\includegraphics[scale=1.0]{images/sprout_merit_demerit.pdf}
 \end{figure}
 
 \vspace{-0.8em}
@@ -71,8 +77,8 @@
 \end{enumerate}
 
 \columnbreak
-\begin{mdframed}[style=conclusion.frame]
-  \large\textbf{\faFlagAlt \vspace{0.02em} 結論: {萌芽性は最大樹高と相反して発達し、多様な受光体制の存在が樹種の共存に貢献している}}
+\begin{mdframed}[style=conclusion.frame,frametitle={\huge\textbf{\color{Black1}{
+  \large\textbf{\faFlagAlt \vspace{0.02em} 結論: {萌芽性は最大樹高と相反して発達し、多様な受光体制の存在が樹種の共存に貢献している}}}}}]
   \vspace{0.4em}
   \flushleft
   \normalsize{\underline{結果\ding{192}}森林樹木の多くの種は複数の幹をもつ\\
@@ -90,7 +96,7 @@
 \end{multicols}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{mdframed}[style=section.frame]
-  \centering\huge\textbf{\color{white}{\faLightbulb \vspace{0.02em} 結果}}
+  \centering\huge\textbf{\color{white}{結果}}
 \end{mdframed}
 
 \begin{multicols}{2}
@@ -100,47 +106,46 @@
 
 \subsection*{各種の株構造と全種の萌芽特性の平均および標準偏差}
 
-% from... KNUT-observation-summary.Rmd
-\begin{wraptable}{r}{14.5em}\caption{調査対象25種の要約。複幹率が高い種順で並べ、\textcolor{Orange1}{上位}および\textcolor{Blue2}{下位}の５種の行を塗りつぶした。}\vspace{-0.4em}
-  \scalebox{0.32}{\begin{tabular}{llrrrrrlll}
+\begin{wraptable}{r}{18em}\caption{調査対象25種の要約。複幹率が高い種順で並べ、上位および下位の５種の行を塗りつぶした。}\vspace{-0.4em}
+  \scalebox{0.38}{\begin{tabular}{llrrrrrlll}
   \hline
-種名 & 略称 & 個体数 & 複幹率 & 萌芽本数 & 株構造指数 & 幹BA比 & 葉特性 & 生活型 & 標高 \\ 
+\rowcolor{white}種名 & 略称 & 個体数 & 複幹率 & 萌芽本数 & 株構造指数 & 幹BA比 & 葉特性 & 生活型 & 標高 \\ 
   \hline
 \rowcolor{Orange1!30}チドリノキ & Ac &  22 & 100.00 & 8.27 & 0.86 & 0.43 & 落葉 & 亜高木 & 700m \\ 
 \rowcolor{Orange1!30}アブラチャン & Lp &  31 & 100.00 & 5.87 & 0.69 & 0.62 & 落葉 & 亜高木 & 800m \\ 
 \rowcolor{Orange1!30}ヒイラギ & Oh &  22 & 81.80 & 2.50 & 0.91 & 0.09 & 常緑 & 亜高木 & 600m \\ 
 \rowcolor{Orange1!30}イヌガシ & Na &  27 & 81.50 & 4.52 & 0.96 & 0.18 & 常緑 & 高木 & 600m \\ 
 \rowcolor{Orange1!30}カマツカ & Pv &  20 & 80.00 & 1.55 & 0.49 & 0.21 & 落葉 & 低木 & 800m \\ 
-ヤブニッケイ & Cy &  27 & 77.80 & 2.15 & 0.88 & 0.12 & 常緑 & 高木 & 600m \\ 
-アオキ & Aj &  21 & 76.20 & 2.81 & 0.85 & 0.18 & 常緑 & 低木 & 600m \\ 
-アオハダ & Im &  23 & 73.90 & 3.35 & 0.87 & 0.16 & 落葉 & 亜高木 & 800m \\ 
-ヒサカキ & Ej &  22 & 68.20 & 3.09 & 0.93 & 0.07 & 常緑 & 亜高木 & 600m \\ 
-ウラジロガシ & Qs &  21 & 66.70 & 1.81 & 0.95 & 0.02 & 常緑 & 高木 & 600m \\ 
-シキミ & Ia &  30 & 63.30 & 3.40 & 0.96 & 0.03 & 常緑 & 亜高木 & 800m \\ 
-イヌツゲ & Ic &  26 & 53.80 & 1.38 & 0.95 & 0.01 & 常緑 & 亜高木 & 800m \\ 
-マメザクラ & Ci &  23 & 47.80 & 1.57 & 0.86 & 0.10 & 落葉 & 亜高木 & 700m \\ 
-アカガシ & Qa &  27 & 37.00 & 1.44 & 0.89 & 0.09 & 常緑 & 高木 & 600m \\ 
-カジカエデ & Ad &  25 & 28.00 & 0.84 & 0.90 & 0.03 & 落葉 & 亜高木 & 800m \\ 
-シロダモ & Ns &  25 & 24.00 & 0.60 & 0.98 & 0.00 & 常緑 & 亜高木 & 600m \\ 
-タンナサワフタギ & Sc &  23 & 13.00 & 0.13 & 0.99 & 0.01 & 落葉 & 亜高木 & 800m \\ 
-イロハモミジ & Ap &  21 & 4.80 & 0.05 & 0.94 & 0.02 & 落葉 & 高木 & 600m \\ 
-イタヤカエデ & Am &  24 & 4.20 & 0.04 & 1.00 & 0.01 & 落葉 & 高木 & 700m \\ 
-シラキ & Nj &  27 & 3.70 & 0.04 & 1.00 & 0.02 & 落葉 & 亜高木 & 800m \\ 
-\rowcolor{Blue2!30}ブナ & Fc &  27 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 700m \\ 
-\rowcolor{Blue2!30}ケヤキ & Zs &  27 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 700m \\ 
-\rowcolor{Blue2!30}オオモミジ & Aa &  26 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 700m \\ 
-\rowcolor{Blue2!30}ヒメシャラ & Sm &  21 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 800m \\ 
-\rowcolor{Blue2!30}イヌシデ & Ct &  28 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 800m \\ 
+\rowcolor{white}ヤブニッケイ & Cy &  27 & 77.80 & 2.15 & 0.88 & 0.12 & 常緑 & 高木 & 600m \\ 
+\rowcolor{white}アオキ & Aj &  21 & 76.20 & 2.81 & 0.85 & 0.18 & 常緑 & 低木 & 600m \\ 
+\rowcolor{white}アオハダ & Im &  23 & 73.90 & 3.35 & 0.87 & 0.16 & 落葉 & 亜高木 & 800m \\ 
+\rowcolor{white}ヒサカキ & Ej &  22 & 68.20 & 3.09 & 0.93 & 0.07 & 常緑 & 亜高木 & 600m \\ 
+\rowcolor{white}ウラジロガシ & Qs &  21 & 66.70 & 1.81 & 0.95 & 0.02 & 常緑 & 高木 & 600m \\ 
+\rowcolor{white}シキミ & Ia &  30 & 63.30 & 3.40 & 0.96 & 0.03 & 常緑 & 亜高木 & 800m \\ 
+\rowcolor{white}イヌツゲ & Ic &  26 & 53.80 & 1.38 & 0.95 & 0.01 & 常緑 & 亜高木 & 800m \\ 
+\rowcolor{white}マメザクラ & Ci &  23 & 47.80 & 1.57 & 0.86 & 0.10 & 落葉 & 亜高木 & 700m \\ 
+\rowcolor{white}アカガシ & Qa &  27 & 37.00 & 1.44 & 0.89 & 0.09 & 常緑 & 高木 & 600m \\ 
+\rowcolor{white}カジカエデ & Ad &  25 & 28.00 & 0.84 & 0.90 & 0.03 & 落葉 & 亜高木 & 800m \\ 
+\rowcolor{white}シロダモ & Ns &  25 & 24.00 & 0.60 & 0.98 & 0.00 & 常緑 & 亜高木 & 600m \\ 
+\rowcolor{white}タンナサワフタギ & Sc &  23 & 13.00 & 0.13 & 0.99 & 0.01 & 落葉 & 亜高木 & 800m \\ 
+\rowcolor{white}イロハモミジ & Ap &  21 & 4.80 & 0.05 & 0.94 & 0.02 & 落葉 & 高木 & 600m \\ 
+\rowcolor{white}イタヤカエデ & Am &  24 & 4.20 & 0.04 & 1.00 & 0.01 & 落葉 & 高木 & 700m \\ 
+\rowcolor{white}シラキ & Nj &  27 & 3.70 & 0.04 & 1.00 & 0.02 & 落葉 & 亜高木 & 800m \\ 
+\rowcolor{Blue2!80}ブナ & Fc &  27 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 700m \\ 
+\rowcolor{Blue2!80}ケヤキ & Zs &  27 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 700m \\ 
+\rowcolor{Blue2!80}オオモミジ & Aa &  26 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 700m \\ 
+\rowcolor{Blue2!80}ヒメシャラ & Sm &  21 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 800m \\ 
+\rowcolor{Blue2!80}イヌシデ & Ct &  28 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 800m \\ 
    \hline
 \end{tabular}}
 \end{wraptable}
 
-\textbf{\underline{複幹率}}{\footnotesize（複幹を持っている個体の割合）}... 43.43$\pm$36.02 (mean$\pm$sd)\\
+\textbf{\underline{複幹率}}\\{\footnotesize（複幹を持っている個体の割合）}\\... 43.43$\pm$36.02\\
 {\scriptsize 亜高木のチドリノキ、アブラチャンでは100\%、ブナやケヤキなど、すべての高木落葉樹種は０\%}\\
-\textbf{\underline{萌芽本数}}{\footnotesize（複幹率０\%より高い）}... 2.27$\pm$2.11 (mean$\pm$sd)\\
+\textbf{\underline{萌芽本数}}{\footnotesize（複幹率０\%より高い）}\\... 2.27$\pm$2.11\\
 {\scriptsize 最大はチドリノキの8.27本}\\
-\textbf{\underline{株構造指数}}{\footnotesize（複幹率０\%より高い）}... 0.89$\pm$0.12 (mean$\pm$sd)\\
-\textbf{\underline{萌芽幹BA比}}{\footnotesize（複幹率０\%より高い）}... 0.12$\pm$0.16 (mean$\pm$sd)
+\textbf{\underline{株構造指数}}{\footnotesize（複幹率０\%より高い）}\\... 0.89$\pm$0.12\\
+\textbf{\underline{萌芽幹BA比}}{\footnotesize（複幹率０\%より高い）}\\... 0.12$\pm$0.16
 
 \end{mdframed}
 
@@ -153,20 +158,21 @@
 
 多くの萌芽幹は主幹を中心とした個体内の他の幹によって被陰されていた。一方で萌芽性が高い種ほど自己被陰の割合が減少する傾向が系統に関わらずみられた。
 
-\begin{multicols}{2}
-
 \begin{figure}
-	\centering
-		\includegraphics[scale=1.5]{images/fig3self_shade_ratio_barplot.pdf}
+ \begin{minipage}{0.48\hsize}
+  \centering
+   \includegraphics[scale=1.5]{images/fig3self_shade_ratio_barplot.pdf}
+ \end{minipage}
+ \begin{minipage}{0.25\hsize}
+  \centering
+   \includegraphics[scale=0.8]{images/fig4self_shad_ssi_cor.pdf}
+ \end{minipage}
+ \begin{minipage}{0.25\hsize}
+  \centering
+   \includegraphics[scale=0.8]{images/fig5self_shad_ssi_cor_pic.pdf}
+ \end{minipage}
 \end{figure}
 
-\columnbreak
-\begin{figure}
-	\centering				
-		\includegraphics[scale=0.8]{images/fig4self_shad_ssi_cor.pdf}
-		\includegraphics[scale=0.8]{images/fig5self_shad_ssi_cor_pic.pdf}
-\end{figure}
-\end{multicols}
 \end{mdframed}
 
 \columnbreak
@@ -176,25 +182,27 @@
   \huge\textbf{\color{Black1}{\LARGE{\ding{193}}\Large{樹高が高くなるほど萌芽性が強くなる}}}]
 \renewcommand{\baselinestretch}{1.2} %revert baseline
 
-\subsection*{樹高と萌芽特性との関係（Spearmanの順位相関係数）}
+\subsection*{樹高と萌芽特性との関係}
+
+Spearmanの順位相関係数
 
 \begin{figure}
 	\centering
-		\includegraphics[scale=2.0]{images/fig1height_spr_cor.pdf}
+		\includegraphics[scale=1.8]{images/fig1height_spr_cor.pdf}
 \end{figure}
 
 系統独立対比による解析でも同様の傾向を検出
 
 \begin{figure}
 	\centering
-	　　\includegraphics[scale=2.0]{images/fig2height_spr_cor_pic.pdf}
+	　　\includegraphics[scale=1.8]{images/fig2height_spr_cor_pic.pdf}
 \end{figure}
 \end{mdframed}
 
 \end{multicols}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{mdframed}[style=section.frame]
-  \centering\huge\textbf{\color{white}{\faWrench \vspace{0.02em} 方法}}
+  \centering\huge\textbf{\color{white}{方法}}
 \end{mdframed}
 
 \begin{multicols}{3}\footnotesize{
@@ -209,10 +217,6 @@
     \item 胸高直径（DBH） 5cm以上を対象に毎木調査\footnote{プロットの設置、毎木調査は東京農業大学　武生、現鹿児島大学　澤田らの調査による}
   \end{itemize}
 \end{itemize}
-
-%\begin{figure}
-%  \includegraphics[scale=0.09]{/Users/uri/Dropbox/LAB/Research/2012QuercusLHS/Images/Studysite_and_area.pdf}
-%\end{figure}
 
 \subsection*{\small{対象種および対象個体}}
 
@@ -229,16 +233,21 @@
 \columnbreak
 \subsection*{\small{測定項目}}
 
+\vspace{-1em}
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.82]{/Users/uri/Dropbox/LAB/Research/2012QuercusLHS/Images/definition_of_basal_sprout.pdf}
+	\includegraphics[scale=0.8]{images/stem_type_define.pdf}
 \end{figure}
 
+\subsection*{\small{株構造指数}}
 
-株構造指数... 
+\begin{figure}
+  \flushleft
+   \includegraphics{images/stool_structure_index2.pdf}
+\end{figure}
 
 \columnbreak
-\subsection*{\small{系統解析}}
+\subsection*{\small{系統解析: 系統独立対比}}
 
 %\vspace{-3em}
 \begin{wrapfigure}{r}{16em}
@@ -252,7 +261,6 @@ Phylomatic(Webb and Donoghue 2005)を用いてAPG III系統樹を作成、
 これらの解析はすべてR 3.1.2で実行。
 
 }\end{multicols}
-
 
 % https://github.com/brunobeltran/MatrixExp
 % https://github.com/thmosqueiro/sciposterpp
