@@ -59,7 +59,7 @@
 \vspace{-2em}
 \begin{multicols}{2}
 \begin{mdframed}[style=section.frame]
-  \centering\huge\textbf{\color{white}{はじめに}}
+  \centering\LARGE\textbf{\color{white}{はじめに}}
 \end{mdframed}
 
 \subsection*{目的: 森林樹木群集を対象に、株構造の差異に働く\\他の性質との関係を明らかにする}
@@ -77,7 +77,7 @@
 \end{enumerate}
 
 \columnbreak
-\begin{mdframed}[style=conclusion.frame,frametitle={\huge\textbf{\color{Black1}{
+\begin{mdframed}[style=conclusion.frame,frametitle={\textbf{\color{Black1}{
   \large\textbf{\faFlagAlt \vspace{0.02em} 結論: {萌芽性は最大樹高と相反して発達し、多様な受光体制の存在が樹種の共存に貢献している}}}}}]
   \vspace{0.4em}
   \flushleft
@@ -87,7 +87,7 @@
   \large{\faHandLeft \vspace{0.02em} 多幹化と低木化は\textbf{\underline{系統関係に依存するものではない}}ことを意味する} % 連動して
   
   \vspace{0.4em}
-  \normalsize{\underline{結果\ding{193}}高木種（とくに落葉樹）は萌芽幹をもたない・主幹に対してわずかな大きさしかない\\
+  \normalsize{\underline{結果\ding{193}}高木種（とくに落葉樹）は萌芽幹をもたない、主幹に対してわずかな大きさしかない\\
   \underline{結果\ding{194}}より萌芽性が強い種では株内の幹による自己被陰を軽減する傾向\\
   }
   \large{\faHandLeft \vspace{0.02em} 樹木の多様な萌芽性として「\textbf{\underline{より上層で光を獲得する}}」と「\textbf{\underline{下層でより効率的に光を受ける}}」という戦略分化が森林内でみられる
@@ -96,7 +96,7 @@
 \end{multicols}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{mdframed}[style=section.frame]
-  \centering\huge\textbf{\color{white}{方法}}
+  \centering\LARGE\textbf{\color{white}{方法}}
 \end{mdframed}
 
 \begin{multicols}{3}\footnotesize{
@@ -112,63 +112,69 @@
   \end{itemize}
 \end{itemize}
 
-\subsection*{\small{対象種および対象個体}}
+\subsection*{\small{対象種および対象個体の選別}}
 
 \begin{itemize}\setlength{\itemindent}{1em}
-  \item 各種の個体数が最も多い標高地点でサンプリング
   \item プロット内で個体数の多い25種
   \begin{itemize}\setlength{\itemindent}{1em}
+    \item 14科17属
     \item 落葉樹15種、常緑樹10種
     \item 高木11種、亜高木12種、低木２種
   \end{itemize}
   \item 各種のDBH上位60 - 90\%の成熟個体
+  \item 各種の個体数が最も多い標高地点でサンプリング（結果\ding{192}）
 \end{itemize}
 
 \columnbreak
-\subsection*{\small{測定項目}}
+\subsection*{\small{測定項目: 幹の直径、高さ}}
 
-\vspace{-1em}
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.8]{images/stem_type_define.pdf}
 \end{figure}
 
-\subsection*{\small{株構造指数}}
+\subsection*{\small{各幹の被陰状態: ３段階のカテゴリーデータ}}
 
 \begin{figure}
-  \flushleft
-   \includegraphics{images/stool_structure_index2.pdf}
+	\centering
+	\includegraphics[scale=0.8]{images/shade_category.pdf}
 \end{figure}
 
 \columnbreak
-\subsection*{\small{系統解析: 系統独立対比}}
+\subsection*{\small{株構造指数: 株構造の定量化}}
 
-%\vspace{-3em}
-\begin{wrapfigure}{r}{16em}
-  \includegraphics[scale=0.8]{/Users/uri/Dropbox/git/Data-analyses/life-history_traits_and_stool_structure/Figure/kn25_phylogenetic_tree_phylogram-1.pdf}
+\begin{wrapfigure}{r}[6]{10em}
+   \includegraphics[scale=0.7]{images/stool_structure_index2.pdf}
 \end{wrapfigure}
 
-Phylomatic(Webb and Donoghue 2005)を用いてAPG III系統樹を作成、
+０から１までの値をとる曲線下での面積。主幹・萌芽幹の直径サイズ、本数を考慮し、１の場合は主幹のみ（積算幹本数１、積算BA１）であることを示す。
 
-解析時、形質間の系統的な偏りを補正するため、系統独立対比を実施
+\vspace{1em}
+\subsection*{\small{系統解析: 種間比較のための系統独立対比}}
 
-これらの解析はすべてR 3.1.2で実行。
+APG IIIに基づく25種の系統データを、既存のデータベース情報\footnote{R20120829.new (\url{https://github.com/camwebb/tree-of-trees/blob/master/megatrees/R20120829.new)}}をもとにPhylomatic\footnote{Webb and Donoghue 2005(\url{http://phylodiversity.net/phylomatic/})}を用いて作成。
+
+\begin{wrapfigure}{r}{16em}
+  \includegraphics[scale=0.5]{/Users/uri/Dropbox/git/Data-analyses/life-history_traits_and_stool_structure/Figure/kn25_phylogenetic_tree_cladogram-1.pdf}
+\end{wrapfigure}
+
+形質間の解析を行う際、系統的な偏りを補正するために系統独立対比を実施。形質値の解析と同様、対比値による相関関係を求めた。
 
 }\end{multicols}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{mdframed}[style=section.frame]
-  \centering\huge\textbf{\color{white}{結果}}
+  \centering\LARGE\textbf{\color{white}{結果}}
 \end{mdframed}
 
 \begin{multicols}{2}
 
-\renewcommand{\baselinestretch}{0.8}\begin{mdframed}[style=subsection.frame,frametitle={\huge\textbf{\color{Black1}{\LARGE{\ding{192}}\Large{25種の株構造は種間で大きく異なる}}}}]
+\renewcommand{\baselinestretch}{0.8}\begin{mdframed}[style=subsection.frame,frametitle={\textbf{\color{Black1}{\LARGE{\ding{192}}\Large{25種の株構造は種間で大きく異なる}}}}]
 \renewcommand{\baselinestretch}{1.2}
 
 \subsection*{各種の株構造と全種の萌芽特性の平均および標準偏差}
 
-\begin{wraptable}{r}{18em}\caption{調査対象25種の要約。複幹率が高い種順で並べ、上位および下位の５種の行を塗りつぶした。}\vspace{-0.4em}
-  \scalebox{0.38}{\begin{tabular}{llrrrrrlll}
+\begin{wraptable}{r}{19em}%\caption{調査対象25種の要約。複幹率が高い種順で並べ、上位および下位の５種の行を塗りつぶした。}\vspace{-0.4em}
+  \scalebox{0.42}{\begin{tabular}{llrrrrrlll}
   \hline
 \rowcolor{white}種名 & 略称 & 個体数 & 複幹率 & 萌芽本数 & 株構造指数 & 幹BA比 & 葉特性 & 生活型 & 標高 \\ 
   \hline
@@ -201,36 +207,32 @@ Phylomatic(Webb and Donoghue 2005)を用いてAPG III系統樹を作成、
 \end{tabular}}
 \end{wraptable}
 
-\textbf{\underline{複幹率}}\\{\footnotesize（複幹を持っている個体の割合）}\\... 43.43$\pm$36.02\\
-{\scriptsize 亜高木のチドリノキ、アブラチャンでは100\%、ブナやケヤキなど、すべての高木落葉樹種は０\%}\\
-\textbf{\underline{萌芽本数}}{\footnotesize（複幹率０\%より高い）}\\... 2.27$\pm$2.11\\
+\textbf{\underline{複幹率}}{\footnotesize（複幹を持っている個体の割合）}\\... 43.43$\pm$36.02\\
+{\scriptsize 亜高木のチドリノキ、アブラチャンでは100\%、ブナやケヤキなど、すべての落葉高木種は０\%}\\
+\textbf{\underline{萌芽本数}}{\footnotesize（複幹をもつ個体限定）}\\... 2.27$\pm$2.11\\
 {\scriptsize 最大はチドリノキの8.27本}\\
-\textbf{\underline{株構造指数}}{\footnotesize（複幹率０\%より高い）}\\... 0.89$\pm$0.12\\
-\textbf{\underline{萌芽幹BA比}}{\footnotesize（複幹率０\%より高い）}\\... 0.12$\pm$0.16
+\textbf{\underline{株構造指数}}{\footnotesize（複幹をもつ個体限定）}\\... 0.89$\pm$0.12\\
+{\scriptsize 落葉樹のみでは、常緑樹のみで}\\
+\textbf{\underline{萌芽幹BA比}}{\footnotesize（複幹をもつ個体限定）}... 0.12$\pm$0.16
 
 \end{mdframed}
 
 \renewcommand{\baselinestretch}{0.8}
-\begin{mdframed}[style=subsection.frame,frametitle=
-  \huge\textbf{\color{Black1}{\LARGE{\ding{194}}\Large{萌芽性が強い種ほど自己被陰率が下がる}}}]
+\begin{mdframed}[style=subsection.frame,frametitle=\textbf{\color{Black1}{\LARGE{\ding{194}}\Large{萌芽性が強い種ほど自己被陰率が下がる}}}]
 \renewcommand{\baselinestretch}{1.2}
 
 \subsection*{複幹率５\%以上の17種を対象とした幹の被陰状況と萌芽性}
 
-多くの萌芽幹は主幹を中心とした個体内の他の幹によって被陰されていた。一方で萌芽性が高い種ほど自己被陰の割合が減少する傾向が系統に関わらずみられた。
+多くの萌芽幹は個体内の他の幹により被陰されていた。一方で萌芽性が高い種ほど自己被陰の割合が減少する傾向が系統関係に依存せずみられた。
 
 \begin{figure}
- \begin{minipage}{0.48\hsize}
+ \begin{minipage}{0.5\hsize}
   \centering
-   \includegraphics[scale=1.5]{images/fig3self_shade_ratio_barplot.pdf}
+   \includegraphics[scale=1.0]{images/fig3self_shade_ratio_barplot.pdf} % size w1855:h1000
  \end{minipage}
- \begin{minipage}{0.25\hsize}
+ \begin{minipage}{0.5\hsize}
   \centering
-   \includegraphics[scale=0.8]{images/fig4self_shad_ssi_cor.pdf}
- \end{minipage}
- \begin{minipage}{0.25\hsize}
-  \centering
-   \includegraphics[scale=0.8]{images/fig5self_shad_ssi_cor_pic.pdf}
+   \includegraphics[scale=1.0]{images/fig4self_shad_ssi_cor.pdf}
  \end{minipage}
 \end{figure}
 
@@ -238,26 +240,25 @@ Phylomatic(Webb and Donoghue 2005)を用いてAPG III系統樹を作成、
 
 \columnbreak
 \renewcommand{\baselinestretch}{0.8}
-\begin{mdframed}[style=subsection.frame,frametitle=
-% 樹高と萌芽特性
-  \huge\textbf{\color{Black1}{\LARGE{\ding{193}}\Large{樹高が高くなるほど萌芽性が強くなる}}}]
+\begin{mdframed}[style=subsection.frame,frametitle=\textbf{\color{Black1}{\LARGE{\ding{193}}\Large{樹高が高くなるほど萌芽性が強くなる}}}]
 \renewcommand{\baselinestretch}{1.2} %revert baseline
 
-\subsection*{樹高と萌芽特性との関係}
+\subsection*{樹高と萌芽特性との相関関係}
 
 Spearmanの順位相関係数
 
 \begin{figure}
 	\centering
-		\includegraphics[scale=1.8]{images/fig1height_spr_cor.pdf}
+		\includegraphics[scale=1.0]{images/fig1height_spr_cor.pdf} % w4000;
 \end{figure}
 
 系統独立対比による解析でも同様の傾向を検出
 
 \begin{figure}
-	\centering
-	　　\includegraphics[scale=1.8]{images/fig2height_spr_cor_pic.pdf}
+	\centering\hspace{-2em}
+	　　\includegraphics[scale=1.0]{images/fig2height_spr_cor_pic.pdf}
 \end{figure}
+
 \end{mdframed}
 
 \end{multicols}
