@@ -96,6 +96,67 @@
 \end{multicols}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{mdframed}[style=section.frame]
+  \centering\huge\textbf{\color{white}{方法}}
+\end{mdframed}
+
+\begin{multicols}{3}\footnotesize{
+
+\subsection*{\small{調査地: 静岡県函南原生林}}
+
+\begin{itemize}\setlength{\itemindent}{1em}
+  \item 禁伐指定により人為的撹乱の影響が少ない成熟林
+  \item ３つの標高地点にプロット（1.0ha）を設置
+  \begin{itemize}\setlength{\itemindent}{1em}
+    \item 常緑樹が優占する600m, 落葉樹優占の800m, \newline 常緑・落葉移行帯の700m
+    \item 胸高直径（DBH） 5cm以上を対象に毎木調査\footnote{プロットの設置、毎木調査は東京農業大学　武生、現鹿児島大学　澤田らの調査による}
+  \end{itemize}
+\end{itemize}
+
+\subsection*{\small{対象種および対象個体}}
+
+\begin{itemize}\setlength{\itemindent}{1em}
+  \item 各種の個体数が最も多い標高地点でサンプリング
+  \item プロット内で個体数の多い25種
+  \begin{itemize}\setlength{\itemindent}{1em}
+    \item 落葉樹15種、常緑樹10種
+    \item 高木11種、亜高木12種、低木２種
+  \end{itemize}
+  \item 各種のDBH上位60 - 90\%の成熟個体
+\end{itemize}
+
+\columnbreak
+\subsection*{\small{測定項目}}
+
+\vspace{-1em}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.8]{images/stem_type_define.pdf}
+\end{figure}
+
+\subsection*{\small{株構造指数}}
+
+\begin{figure}
+  \flushleft
+   \includegraphics{images/stool_structure_index2.pdf}
+\end{figure}
+
+\columnbreak
+\subsection*{\small{系統解析: 系統独立対比}}
+
+%\vspace{-3em}
+\begin{wrapfigure}{r}{16em}
+  \includegraphics[scale=0.8]{/Users/uri/Dropbox/git/Data-analyses/life-history_traits_and_stool_structure/Figure/kn25_phylogenetic_tree_phylogram-1.pdf}
+\end{wrapfigure}
+
+Phylomatic(Webb and Donoghue 2005)を用いてAPG III系統樹を作成、
+
+解析時、形質間の系統的な偏りを補正するため、系統独立対比を実施
+
+これらの解析はすべてR 3.1.2で実行。
+
+}\end{multicols}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{mdframed}[style=section.frame]
   \centering\huge\textbf{\color{white}{結果}}
 \end{mdframed}
 
@@ -200,67 +261,6 @@ Spearmanの順位相関係数
 \end{mdframed}
 
 \end{multicols}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{mdframed}[style=section.frame]
-  \centering\huge\textbf{\color{white}{方法}}
-\end{mdframed}
-
-\begin{multicols}{3}\footnotesize{
-
-\subsection*{\small{調査地: 静岡県函南原生林}}
-
-\begin{itemize}\setlength{\itemindent}{1em}
-  \item 禁伐指定により人為的撹乱の影響が少ない成熟林
-  \item ３つの標高地点にプロット（1.0ha）を設置
-  \begin{itemize}\setlength{\itemindent}{1em}
-    \item 常緑樹が優占する600m, 落葉樹優占の800m, \newline 常緑・落葉移行帯の700m
-    \item 胸高直径（DBH） 5cm以上を対象に毎木調査\footnote{プロットの設置、毎木調査は東京農業大学　武生、現鹿児島大学　澤田らの調査による}
-  \end{itemize}
-\end{itemize}
-
-\subsection*{\small{対象種および対象個体}}
-
-\begin{itemize}\setlength{\itemindent}{1em}
-  \item 各種の個体数が最も多い標高地点でサンプリング
-  \item プロット内で個体数の多い25種
-  \begin{itemize}\setlength{\itemindent}{1em}
-    \item 落葉樹15種、常緑樹10種
-    \item 高木11種、亜高木12種、低木２種
-  \end{itemize}
-  \item 各種のDBH上位60 - 90\%の成熟個体
-\end{itemize}
-
-\columnbreak
-\subsection*{\small{測定項目}}
-
-\vspace{-1em}
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.8]{images/stem_type_define.pdf}
-\end{figure}
-
-\subsection*{\small{株構造指数}}
-
-\begin{figure}
-  \flushleft
-   \includegraphics{images/stool_structure_index2.pdf}
-\end{figure}
-
-\columnbreak
-\subsection*{\small{系統解析: 系統独立対比}}
-
-%\vspace{-3em}
-\begin{wrapfigure}{r}{16em}
-  \includegraphics[scale=0.8]{/Users/uri/Dropbox/git/Data-analyses/life-history_traits_and_stool_structure/Figure/kn25_phylogenetic_tree_phylogram-1.pdf}
-\end{wrapfigure}
-
-Phylomatic(Webb and Donoghue 2005)を用いてAPG III系統樹を作成、
-
-解析時、形質間の系統的な偏りを補正するため、系統独立対比を実施
-
-これらの解析はすべてR 3.1.2で実行。
-
-}\end{multicols}
 
 % https://github.com/brunobeltran/MatrixExp
 % https://github.com/thmosqueiro/sciposterpp
