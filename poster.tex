@@ -45,8 +45,22 @@
 \setlength{\linewidth}{18pt}
 \setlength{\columnsep}{2cm}
 \def\columnseprulecolor{\color{Grey1}}
+% define ruby
+% ref) http://yasuda.homeip.net/insomnia/2011/07/sitatuki-ruby.html
+\newcommand\uruby[3][0]{\leavevmode
+  % 親文字とルビの寸法を取得
+  \setbox0=\hbox{#2}\setbox1=\hbox{\tiny #3}%
+  % 幅の大きいほうの寸法を \dimen0 に格納
+  \ifdim\wd0>\wd1 \dimen0=\wd0\else\dimen0=\wd1\fi
+  % \dimen1 に「ルビ高さ＋深さ＋間隔値」（下にずらす量）を設定
+  \dimen1=\ht1 \advance\dimen1 \dp1 \advance\dimen1 #1\relax
+  % \dimen0 の幅で親文字を出力し，ルビを \dimen1 寸法だけ下に下げる
+  \hbox to\dimen0{\hfil#2\hfil}%
+  \kern-\dimen0\raise-\dimen1\hbox{\vbox{\hbox to\dimen0{\tiny #3}}}}%
+
 \renewcommand{\figurename}{図}
 \renewcommand{\tablename}{表}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \rightlogo{images/logo.pdf}
 \title{\textcolor{Blue1}{函南原生林を構成する樹種の株構造:\\\vspace{-0.2em} 葉群配置戦略としての多様な萌芽性}}
@@ -65,89 +79,103 @@
 
 \begin{multicols}{2}
 
-\subsection*{目的: 森林樹木群集を対象に、株構造の差異に働く\\他の性質との関係を明らかにする}
+\subsection*{目的: 安定した成熟林を構成する樹種を対象に、\\株構造と他の性質との関係を明らかにする}
 
-樹木のサイズを決める樹高と幹の太さは、光獲得競争と物理的安定性や水輸送効率によって決まり（\textcolor{red}{引用}）、形質間のトレードオフが森林内の多種共存を促進する（\textcolor{red}{引用}）。
+樹木のサイズを決める樹高と幹の太さは、光獲得競争と物理的安定性や水輸送効率によって決まり、形質間のトレードオフがある。
 
-森林内では主に高木種が単幹となる一方、低木種を中心に複数の幹をもつ種や個体が共存しており、株構造の違いは種内および種間みられる（\textcolor{red}{引用}）。
+森林内では主に高木種が単幹となる一方、低木種を中心に複数の幹をもつ種や個体が共存しており、こうした\textbf{\underline{株構造の違いは種内間でみられる}}（例えばEscandón \textit{et al.} 2013; Bay \textit{et al.} 2014）。
 
 \columnbreak
-\begin{figure}
-  \centering\includegraphics[scale=1.0]{images/sprout_merit_demerit.pdf}
-\end{figure}
-
 \subsection*{仮説: 複数の幹をもつ種は...}
 
 \begin{enumerate}\setlength{\itemindent}{1em}
 \item 単幹で生育する種よりも\underline{\textbf{樹高が低く}}なる
 \item 多幹化に伴う\underline{\textbf{自己被陰の影響を軽減できる葉群配置}}を行う
 \end{enumerate}
+
+\begin{figure}
+  \centering\includegraphics[scale=0.8]{images/sprout_merit_demerit.pdf}
+\end{figure}
 \end{multicols}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{mdframed}[style=section.frame]
   \centering\LARGE\textbf{\color{white}{方法}}
 \end{mdframed}
 
-\begin{multicols}{3}\footnotesize{
+\begin{multicols}{4}\footnotesize{
 
 \subsection*{\small{調査地: 静岡県函南原生林}}
 
 \begin{itemize}\setlength{\itemindent}{1em}
-  \item 禁伐指定により人為的撹乱の影響が少ない成熟林
+  \item 江戸時代からの禁伐指定により、人為的撹乱の影響が少ない成熟林
   \item ３つの標高地点にプロット（1.0ha）を設置
   \begin{itemize}\setlength{\itemindent}{1em}
-    \item 常緑樹が優占する600m, 落葉樹優占の800m, \newline 常緑・落葉移行帯の700m
-    \item 胸高直径（DBH） 5cm以上を対象に毎木調査\footnote{プロットの設置、毎木調査は東京農業大学　武生、現鹿児島大学　澤田らの調査による}
+    \item 600m（常緑樹優占）、700m（移行帯）、800m（落葉樹優占）
+    \item 胸高直径（DBH） 5cm以上を対象に毎木調査\footnote{プロットの設置、毎木調査は東京農業大学　武生、澤田（現在、鹿児島大学）、国士舘大学　磯谷、横浜国立大学　吉田らの調査による}
   \end{itemize}
 \end{itemize}
 
 \subsection*{\small{対象種および対象個体の選別}}
 
 \begin{itemize}\setlength{\itemindent}{1em}
-  \item プロット内で個体数の多い25種
+  \item １プロット内で20個体以上出現した種
   \begin{itemize}\setlength{\itemindent}{1em}
-    \item 14科17属
-    \item 落葉樹15種、常緑樹10種
-    \item 高木11種、亜高木12種、低木２種
+    \item 14科17属25種（常緑樹10種、落葉樹15種）
   \end{itemize}
   \item 各種のDBH上位60 - 90\%の成熟個体
-  \item 各種の個体数が最も多い標高地点でサンプリング（表１）
+  \item 各種について個体数が最も多い標高でサンプリング（cf. 結果 \textbf{表１}）
 \end{itemize}
 
 \columnbreak
-\subsection*{\small{測定項目: 幹の直径、高さ}}
+\subsection*{\small{測定項目: 幹のサイズ、萌芽幹の被陰状態}}
 
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.8]{images/stem_type_define.pdf}
+	\includegraphics[scale=0.7]{images/stem_type_define.pdf}
 \end{figure}
 
-\subsection*{\small{各幹の被陰状態: ３つのカテゴリーデータ}}
+各萌芽幹については、被陰状況を次の\ding{192}から\ding{194}の\\いずれかから記録
 
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.8]{images/shade_category.pdf}
+	\includegraphics[scale=0.7]{images/shade_category.pdf}
 \end{figure}
 
 \columnbreak
-\subsection*{\small{株構造指数: 株構造の定量化}}
+\subsection*{\small{株構造の定量化: \uruby{株構造指数}{Stool Structure Index(SSI)}}}
 
-\begin{wrapfigure}{r}[6]{10em}
-   \includegraphics[scale=0.7]{images/stool_structure_index2.pdf}
-\end{wrapfigure}
+\flushright{\tiny Uryu \textit{et al.} (Unpublished)}
 
-０から１までの値をとる曲線下での面積。主幹・萌芽幹の直径サイズ、本数を考慮し、１の場合は主幹のみ（積算幹本数１、積算BA１）であることを示す。
+幹本数とサイズの両方を反映。0.5から1の\\値をとる。\flushleft
 
-\vspace{1em}
-\subsection*{\small{系統解析: 種間比較のための系統独立対比}}
+\begin{figure}
+  \centering
+   \includegraphics[scale=0.9]{images/tmp1.pdf}
+\end{figure}
 
-既存のデータベース情報\footnote{R20120829.new (\url{https://github.com/camwebb/tree-of-trees/blob/master/megatrees/R20120829.new)}}をもとに、APG IIIに基づく25種の系統データをPhylomatic\footnote{Webb and Donoghue 2005(\url{http://phylodiversity.net/phylomatic/})}を用いて作成。
+個体（株）\footnote{（株）は株式会社の略ではありません}の中でBAが大きい順に幹を並べる。なお最も大きい幹は主幹となる。
 
-\begin{wrapfigure}{r}{16em}
-  \includegraphics[scale=0.5]{/Users/uri/Dropbox/git/Data-analyses/life-history_traits_and_stool_structure/Figure/kn25_phylogenetic_tree_cladogram-1.pdf}
-\end{wrapfigure}
+\begin{itemize}
+  \item 0.5: 主幹を含めてすべての幹が同じサイズ
+  \item 1: 主幹のみからなる個体
+\end{itemize}
 
-\vspace{1em} 形質間の解析を行う際、系統的な偏りを補正するために系統独立対比を実施。形質値の解析と同様、対比値による相関関係を求めた。
+\columnbreak
+\subsection*{\small{系統独立対比による種間の比較}}
+
+APG I\hspace{-1pt}I\hspace{-1pt}Iのデータベース\footnote{R20120829.new (\url{https://github.com/camwebb/tree-of-trees/blob/master/megatrees/R20120829.new)}}をもとにPhylomatic\footnote{Webb and Donoghue 2005(\url{http://phylodiversity.net/phylomatic/})}にて系統データを作成。
+
+\begin{figure}
+ \begin{minipage}{0.5\hsize}
+  \centering
+   %\includegraphics[scale=0.5]{/Users/uri/Dropbox/git/Data-analyses/life-history_traits_and_stool_structure/Figure/kn25_phylogenetic_tree_cladogram-1.pdf}
+ \end{minipage}
+ \begin{minipage}{0.5\hsize}
+  \centering
+   \includegraphics[scale=0.5]{/Users/uri/Dropbox/git/Data-analyses/life-history_traits_and_stool_structure/Figure/kn25_phylogenetic_tree_cladogram-1.pdf}   
+ \end{minipage}
+\end{figure}
+
 
 }\end{multicols}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -162,48 +190,49 @@
 
 \subsection*{各種の株構造と全種の萌芽特性の平均および標準偏差}
 
-\begin{wraptable}{r}{20em}\caption{調査対象25種の要約。複幹率が高い種順で並べ、上位および下位の５種の行を塗りつぶした。}\vspace{-0.4em}
-  \scalebox{0.46}{\begin{tabular}{llrrrrlll}
+\begin{wraptable}{r}{15.3em}\caption{複幹率が高い種種の順で並べた調査対象種の要約}\vspace{-0.4em}
+  \scalebox{0.44}{\begin{tabular}{llrrrrl}
   \hline
-\rowcolor{white}種名 & 個体数 & 複幹率 & 萌芽本数 & 株構造指数 & 幹BA比 & 葉特性 & 生活型 & 標高 \\ 
+\rowcolor{white}種名 & 個体数 & 複幹率 & 萌芽本数 & 株構造指数 & 萌芽幹RBA & 標高 \\ 
   \hline
-\rowcolor{Orange1!30}チドリノキ &  22 & 100.00 & 8.27 & 0.86 & 0.43 & 落葉 & 亜高木 & 700m \\ 
-\rowcolor{Orange1!30}アブラチャン &  31 & 100.00 & 5.87 & 0.69 & 0.62 & 落葉 & 亜高木 & 800m \\ 
-\rowcolor{Orange1!30}ヒイラギ &  22 & 81.80 & 2.50 & 0.91 & 0.09 & 常緑 & 亜高木 & 600m \\ 
-\rowcolor{Orange1!30}イヌガシ &  27 & 81.50 & 4.52 & 0.96 & 0.18 & 常緑 & 高木 & 600m \\ 
-\rowcolor{Orange1!30}カマツカ &  20 & 80.00 & 1.55 & 0.49 & 0.21 & 落葉 & 低木 & 800m \\ 
-\rowcolor{white}ヤブニッケイ &  27 & 77.80 & 2.15 & 0.88 & 0.12 & 常緑 & 高木 & 600m \\ 
-\rowcolor{white}アオキ &  21 & 76.20 & 2.81 & 0.85 & 0.18 & 常緑 & 低木 & 600m \\ 
-\rowcolor{white}アオハダ &  23 & 73.90 & 3.35 & 0.87 & 0.16 & 落葉 & 亜高木 & 800m \\ 
-\rowcolor{white}ヒサカキ &  22 & 68.20 & 3.09 & 0.93 & 0.07 & 常緑 & 亜高木 & 600m \\ 
-\rowcolor{white}ウラジロガシ &  21 & 66.70 & 1.81 & 0.95 & 0.02 & 常緑 & 高木 & 600m \\ 
-\rowcolor{white}シキミ&  30 & 63.30 & 3.40 & 0.96 & 0.03 & 常緑 & 亜高木 & 800m \\ 
-\rowcolor{white}イヌツゲ &  26 & 53.80 & 1.38 & 0.95 & 0.01 & 常緑 & 亜高木 & 800m \\ 
-\rowcolor{white}マメザクラ &  23 & 47.80 & 1.57 & 0.86 & 0.10 & 落葉 & 亜高木 & 700m \\ 
-\rowcolor{white}アカガシ &  27 & 37.00 & 1.44 & 0.89 & 0.09 & 常緑 & 高木 & 600m \\ 
-\rowcolor{white}カジカエデ &  25 & 28.00 & 0.84 & 0.90 & 0.03 & 落葉 & 亜高木 & 800m \\ 
-\rowcolor{white}シロダモ &  25 & 24.00 & 0.60 & 0.98 & 0.00 & 常緑 & 亜高木 & 600m \\ 
-\rowcolor{white}タンナサワフタギ &  23 & 13.00 & 0.13 & 0.99 & 0.01 & 落葉 & 亜高木 & 800m \\ 
-\rowcolor{white}イロハモミジ &  21 & 4.80 & 0.05 & 0.94 & 0.02 & 落葉 & 高木 & 600m \\ 
-\rowcolor{white}イタヤカエデ &  24 & 4.20 & 0.04 & 1.00 & 0.01 & 落葉 & 高木 & 700m \\ 
-\rowcolor{white}シラキ &  27 & 3.70 & 0.04 & 1.00 & 0.02 & 落葉 & 亜高木 & 800m \\ 
-\rowcolor{Blue2!80}ブナ &  27 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 700m \\ 
-\rowcolor{Blue2!80}ケヤキ &  27 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 700m \\ 
-\rowcolor{Blue2!80}オオモミジ &  26 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 700m \\ 
-\rowcolor{Blue2!80}ヒメシャラ &  21 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 800m \\ 
-\rowcolor{Blue2!80}イヌシデ &  28 & 0.00 & 0.00 & 1.00 & 0.00 & 落葉 & 高木 & 800m \\ 
+\rowcolor{Orange1!30}チドリノキ &  22 & 100.00 & 8.27 & 0.86 & 0.43 & 700 \\ 
+\rowcolor{Orange1!30}アブラチャン &  31 & 100.00 & 5.87 & 0.69 & 0.62 & 800 \\ 
+\rowcolor{Blue2!80}ヒイラギ &  22 & 81.80 & 2.50 & 0.91 & 0.09 & 600 \\ 
+\rowcolor{Blue2!80}イヌガシ &  27 & 81.50 & 4.52 & 0.96 & 0.18 & 600 \\ 
+\rowcolor{Orange1!30}カマツカ &  20 & 80.00 & 1.55 & 0.49 & 0.21 & 800 \\ 
+\rowcolor{Blue2!80}ヤブニッケイ &  27 & 77.80 & 2.15 & 0.88 & 0.12 & 600 \\ 
+\rowcolor{Blue2!80}アオキ &  21 & 76.20 & 2.81 & 0.85 & 0.18 & 600 \\ 
+\rowcolor{Orange1!30}アオハダ &  23 & 73.90 & 3.35 & 0.87 & 0.16 & 800 \\ 
+\rowcolor{Blue2!80}ヒサカキ &  22 & 68.20 & 3.09 & 0.93 & 0.07 & 600 \\ 
+\rowcolor{Blue2!80}ウラジロガシ &  21 & 66.70 & 1.81 & 0.95 & 0.02  & 600 \\ 
+\rowcolor{Blue2!80}シキミ&  30 & 63.30 & 3.40 & 0.96 & 0.03 & 800 \\ 
+\rowcolor{Blue2!80}イヌツゲ &  26 & 53.80 & 1.38 & 0.95 & 0.01  & 800 \\ 
+\rowcolor{Orange1!30}マメザクラ &  23 & 47.80 & 1.57 & 0.86 & 0.10  & 700 \\ 
+\rowcolor{Blue2!80}アカガシ &  27 & 37.00 & 1.44 & 0.89 & 0.09  & 600 \\ 
+\rowcolor{Orange1!30}カジカエデ &  25 & 28.00 & 0.84 & 0.90 & 0.03  & 800 \\ 
+\rowcolor{Blue2!80}シロダモ &  25 & 24.00 & 0.60 & 0.98 & 0.00  & 600 \\ 
+\rowcolor{Orange1!30}タンナサワフタギ &  23 & 13.00 & 0.13 & 0.99 & 0.01  & 800 \\ 
+\rowcolor{Orange1!30}イロハモミジ &  21 & 4.80 & 0.05 & 0.94 & 0.02  & 600 \\ 
+\rowcolor{Orange1!30}イタヤカエデ &  24 & 4.20 & 0.04 & 1.00 & 0.01  & 700 \\ 
+\rowcolor{Orange1!30}シラキ &  27 & 3.70 & 0.04 & 1.00 & 0.02 & 800 \\ 
+\rowcolor{Orange1!30}ブナ &  27 & 0.00 & 0.00 & 1.00 & 0.00 & 700 \\ 
+\rowcolor{Orange1!30}ケヤキ &  27 & 0.00 & 0.00 & 1.00 & 0.00 & 700 \\ 
+\rowcolor{Orange1!30}オオモミジ &  26 & 0.00 & 0.00 & 1.00 & 0.00 & 700 \\ 
+\rowcolor{Orange1!30}ヒメシャラ &  21 & 0.00 & 0.00 & 1.00 & 0.00 & 800 \\ 
+\rowcolor{Orange1!30}イヌシデ &  28 & 0.00 & 0.00 & 1.00 & 0.00　 & 800 \\ 
    \hline
 \end{tabular}}
 \end{wraptable}
 
-\textbf{\underline{複幹率}}{\footnotesize: 複幹を持っている個体の割合}\\... 43.43$\pm$36.02\\
-{\scriptsize 亜高木のチドリノキ、アブラチャンでは100\%、ブナやケヤキなど、すべての落葉高木種は０\%}\\
-\textbf{\underline{萌芽本数}}{\footnotesize: 複幹をもつ個体限定}\\... 2.27$\pm$2.11\\
+\textbf{\underline{複幹率}}{\footnotesize: 複幹を持っている個体の割合}\\平均43.43$\pm$標準偏差36.02\\
+{\scriptsize 0\%（ブナやケヤキなどの落葉広葉種）から100\%（アブラチャン、チドリノキ）と高い多様性}\\
+\textbf{\underline{萌芽本数}}\\2.27$\pm$2.11{\footnotesize（複幹をもつ個体のみで計算）}\\
 {\scriptsize 最大はチドリノキの8.27本}\\
-\textbf{\underline{株構造指数}}{\footnotesize: 複幹をもつ個体限定}\\... 0.89$\pm$0.12\\
-{\scriptsize 落葉樹のみでは、常緑樹のみで}\\
-\textbf{\underline{萌芽幹BA比}}{\footnotesize: 複幹をもつ個体限定}\\... 0.12$\pm$0.16\\
-{\scriptsize 最大はアブラチャンの0.62。複幹をもつ種のなかでも0.1未満が12種。}
+\textbf{\underline{株構造指数}}\\0.89$\pm$0.12{\footnotesize（複幹をもつ個体のみで計算）}\\
+\textbf{\underline{萌芽幹BA比}}\\0.12$\pm$0.16{\footnotesize（複幹をもつ個体のみで計算）}\\
+{\scriptsize 最大はアブラチャンの0.62。0.1未満の種が12種}
+
+\vspace{2em}
 
 \end{mdframed}
 
@@ -215,24 +244,36 @@
 
 多くの萌芽幹は個体内の他の幹により被陰されていた。一方で萌芽性が高い種ほど自己被陰の割合が減少する傾向が系統関係に依存せずみられた。
 
+\begin{multicols}{2}
+
+\begin{figure}
+  \centering
+   \includegraphics[scale=1.0]{images/tmp2} % size w1855:h1000
+   
+   {\tiny 図３．萌芽幹の被陰状況割合}
+\end{figure}
+
+\begin{figure}
+  \centering
+   \includegraphics[scale=1.0]{images/fig4self_shad_ssi_cor.pdf}
+   
+   {\tiny 図４．各種の株構造指数と萌芽幹の自己被陰率との関係。形質値、対比値ともに有意な正の相関関係がみられた。
+   
+\end{figure}
+
+\end{multicols}
+
 \renewcommand{\baselinestretch}{0.8}
 \begin{figure}
  \begin{minipage}{0.5\hsize}
   \centering
-   \includegraphics[scale=1.0]{images/fig3self_shade_ratio_barplot.pdf} % size w1855:h1000
+   \includegraphics[scale=1.0]{images/tmp2} % size w1855:h1000
 
-   {\tiny 図３．萌芽幹の被陰状況割合。全体での自己被陰率は\textcolor{red}{高い}。\newline
    
-   \textbf{\underline{凡例}}... \textcolor{black}{\ding{110}}: 被陰なし、\textcolor{lightgray}{\ding{110}}: 他個体による被陰、\textcolor{white}{\ding{110}}: 自己被陰}
+   \newline
+   
  \end{minipage}
- \begin{minipage}{0.5\hsize}
-  \centering
-   \includegraphics[scale=1.0]{images/fig4self_shad_ssi_cor.pdf}
-   
-   {\tiny 図４．各種の株構造指数と萌芽幹の自己被陰率との関係。形質値、対比値ともに有意な正の相関関係がみられた（Pearsonの積率相関 \textit{P} < 0.05）。
-   
-   \textbf{\underline{凡例}}... 色は\textcolor{Orange1}{落葉樹}:、\textcolor{Blue1}{常緑樹}を示す。\ding{115}: 低木種、\ding{110}: 亜高木種、\ding{108}: 高木種}
- \end{minipage}
+ 
 \end{figure}
 \renewcommand{\baselinestretch}{1.2}
 
@@ -244,13 +285,13 @@
 \begin{mdframed}[style=subsection.frame,frametitle=\textbf{\LARGE{\ding{193}}\Large{樹高が高くなるほど萌芽性が強くなる}}]
 \renewcommand{\baselinestretch}{1.2} %revert baseline
 
-\subsection*{樹高と萌芽特性との相関関係}
+\subsection*{萌芽特性と樹高との相関関係}
 
 \begin{figure}
 	\centering
 		\includegraphics[scale=0.8]{images/fig1height_spr_cor.pdf} % w4000;
 		
-	{\tiny 図１．萌芽に関する４つの特性と樹高との関係。すべての組合わせで有意な相関を示した（Spearmanの順位相関 \textit{P} < 0.05... *, \textit{P} < 0.01... **, \textit{P} < 0.01... ***）。
+	{\tiny 図１．萌芽に関する４つの指標と樹高との関係。すべて有意な相関（Spearmanの順位相関 \textit{P} < 0.05... *, \textit{P} < 0.01... **, \textit{P} < 0.01... ***）。
    
    \textbf{\underline{凡例}}... 色は\textcolor{Orange1}{落葉樹}:、\textcolor{Blue1}{常緑樹}を示す。\ding{115}: 低木種、\ding{110}: 亜高木種、\ding{108}: 高木種}
 \end{figure}
@@ -259,26 +300,26 @@
 	\centering\hspace{-2em}
 	　　\includegraphics[scale=0.8]{images/fig2height_spr_cor_pic.pdf}\\
 	　　
-	　　\hspace{-2em}{\tiny 図２．系統独立対比による萌芽特性と樹高との関係。図１．同様の傾向を検出。萌芽幹BA比を除き、有意な相関関係をもつ。}
+	　　\hspace{-2em}{\tiny 図２．系統独立対比による萌芽特性と樹高との関係。萌芽幹RBAを除いて相関は有意}
 \end{figure}
 
 \end{mdframed}
 
 \renewcommand{\baselinestretch}{1.2}
-\begin{mdframed}[style=conclusion.frame,frametitle={\textbf{\large{\faFlagAlt \vspace{0.02em} 結論: {萌芽性は最大樹高と相反して発達しており、\\多様な受光体制の存在が樹種の共存に貢献する}}}}]
+\begin{mdframed}[style=conclusion.frame,frametitle={\textbf{\large{\faFlagAlt \vspace{0.02em} 結論: {萌芽性は最大樹高と相反して発達しており、群集の中に多様な萌芽性をもつ種が存在する}}}}]
   \vspace{0.4em}
   \flushleft
-  \normalsize{\underline{結果\ding{192}}森林樹木の多くの種は複数の幹をもつ\\
-  \underline{結果\ding{193}}樹高と萌芽特性はトレードオフの関係にある\\
+  \normalsize{\underline{結果\ding{192}}多くの種は複数の幹をもつ\\
+  \underline{結果\ding{193}}樹高と萌芽特性はトレードオフ\\
   }
-  \large{\faHandLeft \vspace{0.02em} 多幹化と低木化の関係は\textbf{\underline{系統関係に依存するものではない}}ことを意味する}
+  \large{\faHandLeft \vspace{0.02em} この関係は対象とした種の\textbf{\underline{系統的偏りによって生じた偽相関ではない}}}
   
   \vspace{0.4em}
   \normalsize{\underline{結果\ding{192}\ding{193}}高木種（特に落葉樹）は萌芽幹をもたない、あるいは主幹に対してわずかな大きさしかない\\
   \underline{結果\ding{194}}より萌芽性が強い種では株内の幹による自己被陰を軽減する傾向\\
   }
-  \large{\faHandLeft \vspace{0.02em} 「\textbf{\underline{より上層で光を獲得する}}」と「\textbf{\underline{下層でより効率的に光を}} \textbf{\underline{受ける}}」という戦略分化が同一の森林内でみられる
-  }
+  \large{\faHandLeft \vspace{0.02em}  群集内で「\textbf{\underline{より上層で光を獲得する}}」と「\textbf{\underline{下層でより効率的に光を}} \textbf{\underline{受ける}}」の戦略分化があり
+  、萌芽性は後者の戦術として進化している。}
  
 \end{mdframed}
 
