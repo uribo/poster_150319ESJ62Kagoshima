@@ -54,7 +54,7 @@
   \setbox0=\hbox{#2}\setbox1=\hbox{\tiny #3}%
   % 幅の大きいほうの寸法を \dimen0 に格納
   \ifdim\wd0>\wd1 \dimen0=\wd0\else\dimen0=\wd1\fi
-  % \dimen1 に「ルビ高さ＋深さ＋間隔値」（下にずらす量）を設定
+  % \dimen1 に「ルビ高さ＋深さ＋間隔値」(下にずらす量)を設定
   \dimen1=\ht1 \advance\dimen1 \dp1 \advance\dimen1 #1\relax
   % \dimen0 の幅で親文字を出力し，ルビを \dimen1 寸法だけ下に下げる
   \hbox to\dimen0{\hfil#2\hfil}%
@@ -82,7 +82,7 @@
 
 \vspace{-0.6em}\subsection*{目的: 安定した成熟林を構成する樹種を対象に、\\\hspace*{10em}株構造と他の形質との関係を明らかにする}
 
-樹木の株構造（樹高、幹の本数・太さ）の違いは種内間でみられ {\footnotesize(Escandón \textit{et al.} 2013; Bay \textit{et al.} 2014)}、\textbf{\underline{森林群集内では幹の本数が異なる種・個体が共存}}している
+樹木の株構造(樹高、幹の本数・太さ)の違いは種内間でみられ {\footnotesize(Escandón \textit{et al.} 2013; Bay \textit{et al.} 2014)}、\textbf{\underline{森林群集内では幹の本数が異なる種・個体が共存}}している
 
 \vspace{-0.6em}\begin{figure}
  \begin{minipage}{0.6\hsize}
@@ -127,7 +127,7 @@
 
 % minipage にすると脚注がポスター下につかないのでwrapfigで対応
 \begin{wrapfigure}{r}{16.7em}
-  \includegraphics[scale=0.32]{/Users/uri/Dropbox/LAB/Research/2013Structure_of_Multi-stemmed_Trees/Slide/talk_150206WS/images/kn25species.pdf}
+  \includegraphics[scale=0.30]{/Users/uri/Dropbox/LAB/Research/2013Structure_of_Multi-stemmed_Trees/Slide/talk_150206WS/images/kn25species.pdf}
 \end{wrapfigure}
 
 \subsection*{調査地: 静岡県函南原生林}
@@ -136,7 +136,7 @@
 
 \faCaretRight ３標高地点にプロット(1.0ha)を設置
 
-\faCaretRight 胸高直径 5cm以上の毎木調査\footnote{プロットの設置、毎木調査は東京農業大学　武生、澤田（現在、鹿児島大学）、国士舘大学　磯谷、横浜国立大学　吉田らの調査による}
+\faCaretRight 胸高直径 5cm以上の毎木調査\footnote{プロットの設置、毎木調査は東京農業大学　武生、澤田(現在、鹿児島大学)、国士舘大学　磯谷、横浜国立大学　吉田らの調査による}
 
 \subsection*{対象対象: 14科17属25種}
 
@@ -150,6 +150,7 @@
 \subsection*{測定項目: 幹のサイズ、萌芽幹の被陰状態}
 
 \begin{figure}
+  \centering
 	\includegraphics[scale=0.7]{images/stem_type_define.pdf}
 \end{figure}
 
@@ -176,22 +177,32 @@
 \end{mdframed}\vspace{-1.2em}
 
 \begin{multicols}{2}
-\begin{mdframed}[style=subsection.frame,frametitle={\textbf{\huge{\ding{192}}\LARGE{25種の株構造は種間で大きく異なる}}}]
+
+\begin{mdframed}[style=subsection.frame,frametitle={\textbf{\huge{\ding{192}}\LARGE{25種の株構造は種間で大きく異なる}}}]
 
 \begin{figure}
   \centering
-    \includegraphics[scale=1.6]{images/original/fig1_phylogeny_and_trait-1}
+    \includegraphics[scale=1.5]{images/original/fig1_phylogeny_and_trait-1}
 \end{figure}
 
-\textbf{\underline{複幹率}}{\footnotesize: 萌芽幹を持っている個体の割合} 平均43.43$\pm$標準偏差36.02\\
-{\scriptsize 0\%（ブナやケヤキなどの落葉高木）から100\%（アブラチャン、チドリノキ）と高い多様性}\\
-\textbf{\underline{萌芽本数}} 2.27$\pm$2.11{\footnotesize（萌芽㈲個体のみで計算）}
-{\scriptsize 最大はチドリノキの8.27本}\\
-\textbf{\underline{株構造指数}} 0.89$\pm$0.12{\footnotesize（萌芽㈲個体のみで計算）}\\
-\textbf{\underline{萌芽幹BA比}} 0.12$\pm$0.16{\footnotesize（萌芽㈲個体のみで計算）}
-{\scriptsize 最大はアブラチャンの0.62。0.1未満の種が12種}
+\vspace{-1em}
+\faCaretRight \textbf{複幹率}{\small: 萌芽幹を持っている個体の割合} 平均43.43$\pm$標準偏差36.02
 
-%\vspace{2em}
+\hspace*{4.5em}{\large \faHandLeft \textbf{\underline{0から100\%と幅広い多様性}}}
+
+{\small
+\hspace*{4.5em}複幹なしの種: ブナ, ケヤキ, オオモミジ, ヒメシャラ, イヌシデ (すべて落葉樹)
+
+%\hspace*{4.5em}\faCaretRight 複幹率100\%の種: チドリノキ, アブラチャン
+}
+
+\faCaretRight \textbf{萌芽本数}: 2.27$\pm$2.11{\small(萌芽㈲個体のみで計算)}
+
+\faCaretRight \textbf{株構造指数}: 0.89$\pm$0.12{\small(萌芽㈲個体のみで計算)}
+
+\hspace*{4.5em}{\large \faHandLeft \textbf{\underline{多くの種の萌芽幹は主幹に対して相対的に小さい}}}
+
+\faCaretRight \textbf{萌芽幹BA比}: 0.12$\pm$0.16{\small(萌芽㈲個体のみで計算)}
 
 \end{mdframed}
 
@@ -220,9 +231,15 @@
 \end{figure}
 
 \begin{figure}
-	\centering
-		\includegraphics[scale=0.82]{images/original/fig4_sprout_height_pic-1}
+ \begin{minipage}{0.3\hsize}
+{\large \faHandLeft \textbf{\underline{系統的偏りを考慮した}}\\ \textbf{\underline{場合にも同様の傾向}}}
+ \end{minipage}
+ \begin{minipage}{0.7\hsize}
+  \centering
+   \includegraphics[scale=0.84]{images/original/fig4_sprout_height_pic-1}
+ \end{minipage}
 \end{figure}
+
 
 \end{mdframed}
 
