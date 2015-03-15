@@ -133,8 +133,8 @@ ggplot(df.shade, aes(x = Jp.Species, y = value, fill = 幹の被陰状況)) +
 #        axis.title = element_text(size = 46),
         axis.text.x = element_text(family = "Helvetica"),
         axis.text.y = element_text(family = "Helvetica"),
-        plot.background = element_rect(fill = "#FFFFFF10"),
-        panel.background = element_rect(fill = "#FFFFFF10")) +
+#        panel.background = element_rect(fill = "#FFFFFF10"),
+        plot.background = element_rect(fill = "#FFFFFF10")) +
   xlab("") + ylab("萌芽幹の被陰状態") +
   scale_fill_grey(start = 1.0, end = 0.3)
 ```
@@ -155,7 +155,7 @@ tree <- read.nexus("/Users/uri/Dropbox/git/Data-analyses/Data-information/spr17.
   multi2di() # pic を実行したときの`phy' is not rooted and fully dichotomous解消のため
 ```
 
-```{r fig3_sprout_shoot_self_shade, fig.width = 10, fig.height = 10, eval = FALSE}
+```{r fig3_sprout_shoot_self_shade, fig.width = 10, fig.height = 10, eval = TRUE}
 # fig.width = 15, 
 ### MS Height (shade.c1) against AUC value
 cor_label(df$AUC.Value, df$shade.c1)
@@ -173,12 +173,12 @@ ggplot(data = df, aes(x = AUC.Value, y = shade.c1)) +
         axis.title = element_text(size = 46),
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
-        plot.background = element_rect(fill = "#FFFFFF10"),
-        panel.background = element_rect(fill = "#FFFFFF10"))
+#        panel.background = element_rect(fill = "#FFFFFF10"),
+        plot.background = element_rect(fill = "#FFFFFF10"))
 ```
 
 
-```{r fig3_sprout_shoot_self_shade_pic, fig.width = 10, fig.height = 10, eval = FALSE}
+```{r fig3_sprout_shoot_self_shade_pic, fig.width = 10, fig.height = 10, eval = TRUE}
 lm_pic(x = df$AUC.Value, y = df$shade.c1, tree)
 cor_label(df.pic$x, df.pic$y)
 ggplot(data = df.pic, aes(x = x, y = y)) +
@@ -195,8 +195,8 @@ ggplot(data = df.pic, aes(x = x, y = y)) +
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
         axis.title.y = element_text(size = 36),
-        plot.background = element_rect(fill = "#FFFFFF10"),
-        panel.background = element_rect(fill = "#FFFFFF10"))
+#        panel.background = element_rect(fill = "#FFFFFF10"),
+        plot.background = element_rect(fill = "#FFFFFF10"))
 ```
 
 # FIGURE 4
@@ -210,7 +210,7 @@ tree <- read.nexus("/Users/uri/Dropbox/git/Data-analyses/Data-information/kn25tr
 
 ## Cross-species
 
-```{r fig4_sprout_height, fig.width = 14, fig.height = 14, eval = FALSE}
+```{r fig4_sprout_height, fig.width = 14, fig.height = 14, eval = TRUE}
 theme_set(theme_classic(base_size = 36, base_family = "Helvetica"))
 ### Mean height against Resprout ratio
 cor_label(df$rs.ratio, df$Height, method = "spearman")
@@ -229,8 +229,8 @@ p1 <- ggplot(data = df, aes(x = rs.ratio, y = Height)) +
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
 #         axis.title.y = element_text(size = 36),
-        plot.background = element_rect(fill = "#FFFFFF10"),
-        panel.background = element_rect(fill = "#FFFFFF10"))
+#        panel.background = element_rect(fill = "#FFFFFF10"),
+        plot.background = element_rect(fill = "#FFFFFF10"))
 ### Mean height against R
 cor_label(df$num.rs, df$Height, method = "spearman")
 p2 <- ggplot(data = df, aes(x = num.rs, y = Height)) +
@@ -248,8 +248,8 @@ p2 <- ggplot(data = df, aes(x = num.rs, y = Height)) +
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
 #         axis.title.y = element_text(size = 36),
+#        panel.background = element_rect(fill = "#FFFFFF10"),
         plot.background = element_rect(fill = "#FFFFFF10"),
-        panel.background = element_rect(fill = "#FFFFFF10"),
         axis.title.y = element_blank(), axis.text.y = element_blank())
 ### Mean height against AUC value
 cor_label(df$AUC.Value, df$Height, method = "spearman")
@@ -268,8 +268,8 @@ p3 <- ggplot(data = df, aes(x = AUC.Value, y = Height)) +
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
 #         axis.title.y = element_text(size = 36),
-        plot.background = element_rect(fill = "#FFFFFF10"),
-        panel.background = element_rect(fill = "#FFFFFF10"))
+#        panel.background = element_rect(fill = "#FFFFFF10"),
+        plot.background = element_rect(fill = "#FFFFFF10"))
 ### Mean height against ba.size.ratio
 cor_label(df$ba.size.ratio.old, df$Height, method = "spearman")
 p4 <- ggplot(data = df, aes(x = ba.size.ratio.old, y = Height)) +
@@ -287,8 +287,8 @@ p4 <- ggplot(data = df, aes(x = ba.size.ratio.old, y = Height)) +
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
 #         axis.title.y = element_text(size = 36),
+#        panel.background = element_rect(fill = "#FFFFFF10"),
         plot.background = element_rect(fill = "#FFFFFF10"),
-        panel.background = element_rect(fill = "#FFFFFF10"),
         axis.title.y = element_blank(), axis.text.y = element_blank())
 
 grid.arrange(p1, p2, p3, p4, ncol = 2)
@@ -313,8 +313,8 @@ p5 <- ggplot(data = df.pic, aes(x = x, y = y)) +
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
 #         axis.title.y = element_text(size = 36),
-        plot.background = element_rect(fill = "#FFFFFF10"),
-        panel.background = element_rect(fill = "#FFFFFF10"))
+#        panel.background = element_rect(fill = "#FFFFFF10"),
+        plot.background = element_rect(fill = "#FFFFFF10"))
 #### number of sprout
 lm_pic(x = df$num.rs, y = df$Height, tree)
 cor_label(df.pic$x, df.pic$y)
@@ -330,8 +330,8 @@ p6 <- ggplot(data = df.pic, aes(x = x, y = y)) +
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
 #         axis.title.y = element_text(size = 36),
+#        panel.background = element_rect(fill = "#FFFFFF10"),
         plot.background = element_rect(fill = "#FFFFFF10"),
-        panel.background = element_rect(fill = "#FFFFFF10"),
         axis.title.y = element_blank(), axis.text.y = element_blank())
 #### AUC Value
 lm_pic(x = df$AUC.Value, y = df$Height, tree)
@@ -348,8 +348,8 @@ p7 <- ggplot(data = df.pic, aes(x = x, y = y)) +
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
 #         axis.title.y = element_text(size = 36),
-        plot.background = element_rect(fill = "#FFFFFF10"),
-        panel.background = element_rect(fill = "#FFFFFF10"))
+#        panel.background = element_rect(fill = "#FFFFFF10"),
+        plot.background = element_rect(fill = "#FFFFFF10"))
 #### BA size ratio
 lm_pic(x = df$ba.size.ratio.old, y = df$Height, tree)
 cor_label(df.pic$x, df.pic$y)
@@ -365,8 +365,8 @@ p8 <- ggplot(data = df.pic, aes(x = x, y = y)) +
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
 #         axis.title.y = element_text(size = 36),
+#        panel.background = element_rect(fill = "#FFFFFF10"),
         plot.background = element_rect(fill = "#FFFFFF10"),
-        panel.background = element_rect(fill = "#FFFFFF10"),
         axis.title.y = element_blank(), axis.text.y = element_blank())
 
 grid.arrange(p5, p6, p7, p8, ncol = 2)
