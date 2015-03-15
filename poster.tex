@@ -62,6 +62,7 @@
 % define figure and table's caption style
 \renewcommand{\figurename}{図}
 \renewcommand{\tablename}{表}
+\setlength{\fboxrule}{1pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \rightlogo{images/logo.pdf}
 \title{\textcolor{Blue1}{函南原生林を構成する樹種の株構造:\\\vspace{-0.2em} 葉群配置戦略としての多様な萌芽性}}
@@ -134,7 +135,6 @@
 
 \subsection*{対象対象: 14科17属25種}
 
-
 \faCaretRight １プロット内で20個体以上出現した種 cf. 結果\ding{192}表
 
 \faCaretRight 各種の個体数が最も多いプロット内で胸高直径上位60-90\%の個体を抽出
@@ -173,8 +173,8 @@
 \begin{mdframed}[style=subsection.frame,frametitle={\textbf{\huge{\ding{192}}\LARGE{25種の株構造は種間で大きく異なる}}}]
 
 \begin{figure}
-  \centering
-    \includegraphics[scale=1.6]{images/original/fig1_phylogeny_and_trait-1}
+  \centering\fbox{
+    \includegraphics[scale=1.6]{images/original/fig1_phylogeny_and_trait-1}}
 \end{figure}
 
 \textbf{\underline{複幹率}}{\footnotesize: 萌芽幹を持っている個体の割合} 平均43.43$\pm$標準偏差36.02
@@ -193,13 +193,13 @@
 
 \begin{figure}
  \begin{minipage}{0.25\hsize}
-  \centering
-   \includegraphics[scale=0.45]{images/original/fig2_sprout_stem_shading_condition-1}
+  \centering\fbox{
+   \includegraphics[scale=0.45]{images/original/fig2_sprout_stem_shading_condition-1}}
  \end{minipage}
  \begin{minipage}{0.75\hsize}
-  \centering
+  \centering\fbox{
    \includegraphics[scale=.5]{images/original/fig3_sprout_shoot_self_shade-1}
-   \includegraphics[scale=.5]{images/original/fig3_sprout_shoot_self_shade_pic-1}
+   \includegraphics[scale=.5]{images/original/fig3_sprout_shoot_self_shade_pic-1}}
  \end{minipage}
 \end{figure}
 
@@ -209,13 +209,13 @@
 \begin{mdframed}[style=subsection.frame,frametitle=\textbf{\huge{\ding{193}}\LARGE{萌芽性が強くなるほど樹高が低くなる}}]
 
 \begin{figure}
-	\centering
-		\includegraphics[scale=1.0]{images/original/fig4_sprout_height-1}
+	\centering\fbox{
+		\includegraphics[scale=1.0]{images/original/fig4_sprout_height-1}}
 \end{figure}
 
 \begin{figure}
-	\centering
-		\includegraphics[scale=0.7]{images/original/fig4_sprout_height_pic-1}
+	\centering\fbox{
+		\includegraphics[scale=0.7]{images/original/fig4_sprout_height_pic-1}}
 \end{figure}
 
 \end{mdframed}
