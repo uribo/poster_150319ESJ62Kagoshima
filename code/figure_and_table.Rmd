@@ -76,7 +76,8 @@ read.csv("/Users/uri/Dropbox/git/Data-analyses/Data-information/KN25information.
 
 trait <- read.csv("/Users/uri/Dropbox/git/Data-analyses/life-history_traits_and_stool_structure/Data/KNUT_observation_summary.csv", header = TRUE) %>% 
   arrange(Phylo.Order) %>% 
-  select(Abbreviation, 萌芽幹RBA = ba.size.ratio.old, 株構造指数 = AUC.Value, 萌芽本数 = num.rs, 複幹率 = rs.ratio)
+  select(Abbreviation, 複幹率 = rs.ratio, 萌芽本数 = num.rs, 株構造指数 = AUC.Value, 萌芽幹RBA = ba.size.ratio.old)  
+#  select(Abbreviation, 萌芽幹RBA = ba.size.ratio.old, 株構造指数 = AUC.Value, 萌芽本数 = num.rs, 複幹率 = rs.ratio) # 順番が入れ替わる場合用
 
 kn25 <- phylobase::phylo4d(tree, trait) # make a phylo4d object
 
@@ -155,7 +156,7 @@ tree <- read.nexus("/Users/uri/Dropbox/git/Data-analyses/Data-information/spr17.
   multi2di() # pic を実行したときの`phy' is not rooted and fully dichotomous解消のため
 ```
 
-```{r fig3_sprout_shoot_self_shade, fig.width = 10, fig.height = 10, eval = TRUE}
+```{r fig3_sprout_shoot_self_shade, fig.width = 10, fig.height = 10, eval = FALSE}
 # fig.width = 15, 
 ### MS Height (shade.c1) against AUC value
 cor_label(df$AUC.Value, df$shade.c1)
@@ -178,7 +179,7 @@ ggplot(data = df, aes(x = AUC.Value, y = shade.c1)) +
 ```
 
 
-```{r fig3_sprout_shoot_self_shade_pic, fig.width = 10, fig.height = 10, eval = TRUE}
+```{r fig3_sprout_shoot_self_shade_pic, fig.width = 10, fig.height = 10, eval = FALSE}
 lm_pic(x = df$AUC.Value, y = df$shade.c1, tree)
 cor_label(df.pic$x, df.pic$y)
 ggplot(data = df.pic, aes(x = x, y = y)) +
@@ -210,7 +211,7 @@ tree <- read.nexus("/Users/uri/Dropbox/git/Data-analyses/Data-information/kn25tr
 
 ## Cross-species
 
-```{r fig4_sprout_height, fig.width = 14, fig.height = 14, eval = TRUE}
+```{r fig4_sprout_height, fig.width = 14, fig.height = 14, eval = FALSE}
 theme_set(theme_classic(base_size = 36, base_family = "Helvetica"))
 ### Mean height against Resprout ratio
 cor_label(df$rs.ratio, df$Height, method = "spearman")
@@ -296,7 +297,7 @@ grid.arrange(p1, p2, p3, p4, ncol = 2)
 
 ## PIC
 
-```{r fig4_sprout_height_pic, fig.width = 8, fig.height = 8, eval = TRUE}
+```{r fig4_sprout_height_pic, fig.width = 8, fig.height = 8, eval = FALSE}
 theme_set(theme_classic(base_size = 16, base_family = "Helvetica"))
 lm_pic(x = df$rs.ratio, y = df$Height, tree)
 cor_label(df.pic$x, df.pic$y)
