@@ -95,7 +95,7 @@ table.phylo4d(kn25, treetype = "phylogram", symbol = "circles",
 
 # FIGURE 2
 
-```{r fig2_sprout_stem_shading_condition, fig.width = 8, fig.height = 10, eval = FALSE}
+```{r fig2_sprout_stem_shading_condition, fig.width = 7, fig.height = 10, eval = FALSE}
 df.tmp <- read.csv("/Users/uri/Dropbox/git/Data-analyses/life-history_traits_and_stool_structure/Data/Original/kn25obs-spr.csv", header = TRUE) %>%
   mutate(CPI = round(CPI, 0))
 df.trait <- read.csv("/Users/uri/Dropbox/git/Data-analyses/life-history_traits_and_stool_structure/Data/KNUT_observation_summary.csv", header = TRUE) %>%
@@ -125,7 +125,7 @@ df.shade$Jp.Species  <- c("アオキ", "カマツカ", "ヒサカキ", "イヌ�
                           "シキミ", "アブラチャン", "マメザクラ", "チドリノキ", "アオハダ", "カジカエデ", 
                           "ヤブニッケイ", "イヌガシ", "ウラジロガシ", "アカガシ"))
 #######*****#######*****#######*****#######***
-
+theme_set(theme_classic(base_size = 24, base_family = "Helvetica")) 
 ggplot(df.shade, aes(x = Jp.Species, y = value, fill = 幹の被陰状況)) +
   geom_bar(stat = "identity", colour = "#000000") +
   guides(fill = FALSE, colour = FALSE) + #  guide_legend(reverse = TRUE)
@@ -133,7 +133,7 @@ ggplot(df.shade, aes(x = Jp.Species, y = value, fill = 幹の被陰状況)) +
         text = element_text(family = "Japan1GothicBBB", size = 36),
 #        axis.title = element_text(size = 46),
         axis.text.x = element_text(family = "Helvetica"),
-        axis.text.y = element_text(family = "Helvetica"),
+        axis.text.y = element_text(family = "Helvetica", size = 22),
 #        panel.background = element_rect(fill = "#FFFFFF10"),
         plot.background = element_rect(fill = "#FFFFFF10")) +
   xlab("") + ylab("萌芽幹の被陰状態") +
@@ -158,10 +158,11 @@ tree <- read.nexus("/Users/uri/Dropbox/git/Data-analyses/Data-information/spr17.
 
 ```{r fig3_sprout_shoot_self_shade, fig.width = 10, fig.height = 10, eval = FALSE}
 # fig.width = 15, 
+theme_set(theme_classic(base_size = 24, base_family = "Helvetica")) # fig2: 18; fig3: 24
 ### MS Height (shade.c1) against AUC value
 cor_label(df$AUC.Value, df$shade.c1)
 ggplot(data = df, aes(x = AUC.Value, y = shade.c1)) +
-  geom_point(size = 12, aes(color = Leaf.Habit)) + 
+  geom_point(size = 14, aes(color = Leaf.Habit)) + 
   scale_colour_manual(values = c("#F9B04F", "#469B9A")) + #scale_fill_manual(values = c(1, 16)) + 
   geom_smooth(method = "lm", se = FALSE, color = "black") + 
   guides(colour = FALSE) + 
@@ -170,10 +171,10 @@ ggplot(data = df, aes(x = AUC.Value, y = shade.c1)) +
            label = label.r,
            parse = TRUE, size = 16, family = "Helvetica") +
   scale_x_continuous("株構造指数", breaks = seq(0.5, 1.0, 0.25)) + ylab("萌芽幹の自己被陰率") +
-  theme(text = element_text(family = "Japan1GothicBBB", size = 36),
-        axis.title = element_text(size = 46),
-        axis.text.x = element_text(family = "Helvetica", size = 32),
-        axis.text.y = element_text(family = "Helvetica", size = 32),
+  theme(text = element_text(family = "Japan1GothicBBB", size = 40),
+        axis.title = element_text(size = 54),
+        axis.text.x = element_text(family = "Helvetica", size = 36),
+        axis.text.y = element_text(family = "Helvetica", size = 36),
 #        panel.background = element_rect(fill = "#FFFFFF10"),
         plot.background = element_rect(fill = "#FFFFFF10"))
 ```
@@ -183,7 +184,7 @@ ggplot(data = df, aes(x = AUC.Value, y = shade.c1)) +
 lm_pic(x = df$AUC.Value, y = df$shade.c1, tree)
 cor_label(df.pic$x, df.pic$y)
 ggplot(data = df.pic, aes(x = x, y = y)) +
-  geom_point(size = 12) +
+  geom_point(size = 14) +
   geom_smooth(method = "lm", formula = y ~ x - 1, se = FALSE, color = "black") +
   annotate("text", x = -0.025, y = 3,
            colour = "black",
@@ -191,11 +192,11 @@ ggplot(data = df.pic, aes(x = x, y = y)) +
            parse = TRUE, size = 16, family = "Helvetica") +
   scale_x_continuous(breaks = seq(-0.05, 0.05, 0.05)) + 
   xlab("株構造指数(対比値)") + ylab("萌芽幹の自己被陰率(対比値)") +
-  theme(text = element_text(family = "Japan1GothicBBB", size = 36),
-        axis.title = element_text(size = 46),
-        axis.text.x = element_text(family = "Helvetica", size = 32),
-        axis.text.y = element_text(family = "Helvetica", size = 32),
-        axis.title.y = element_text(size = 36),
+  theme(text = element_text(family = "Japan1GothicBBB"),
+        axis.title = element_text(size = 54),
+        axis.text.x = element_text(family = "Helvetica", size = 36),
+        axis.text.y = element_text(family = "Helvetica", size = 36),
+        axis.title.y = element_text(size = 42),
 #        panel.background = element_rect(fill = "#FFFFFF10"),
         plot.background = element_rect(fill = "#FFFFFF10"))
 ```
@@ -211,7 +212,7 @@ tree <- read.nexus("/Users/uri/Dropbox/git/Data-analyses/Data-information/kn25tr
 
 ## Cross-species
 
-```{r fig4_sprout_height, fig.width = 14, fig.height = 14, eval = FALSE}
+```{r fig4_sprout_height, fig.width = 12.5, fig.height = 12.5, eval = FALSE}
 theme_set(theme_classic(base_size = 36, base_family = "Helvetica"))
 ### Mean height against Resprout ratio
 cor_label(df$rs.ratio, df$Height, method = "spearman")
@@ -224,14 +225,15 @@ p1 <- ggplot(data = df, aes(x = rs.ratio, y = Height)) +
            colour = "black",
            label = label.r,
            parse = TRUE, size = 12, family = "Helvetica") +
-  scale_x_continuous(name = "複幹率", breaks = seq(0, 100, 50)) + scale_y_continuous(name = "樹高(m)", limits = c(0, 25), breaks = seq(0, 25, 10)) +
-    theme(text = element_text(family = "Japan1GothicBBB", size = 36),
+  scale_x_continuous(name = "複幹率", breaks = seq(0, 100, 50)) + scale_y_continuous(name = "", limits = c(0, 25), breaks = seq(0, 25, 10)) +
+    theme(text = element_text(family = "Japan1GothicBBB", size = 46),
 #         axis.title = element_text(size = 46),
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
 #         axis.title.y = element_text(size = 36),
 #        panel.background = element_rect(fill = "#FFFFFF10"),
-        plot.background = element_rect(fill = "#FFFFFF10"))
+        plot.background = element_rect(fill = "#FFFFFF10"),
+        axis.title.y = element_blank(), axis.text.y = element_blank())
 ### Mean height against R
 cor_label(df$num.rs, df$Height, method = "spearman")
 p2 <- ggplot(data = df, aes(x = num.rs, y = Height)) +
@@ -244,7 +246,7 @@ p2 <- ggplot(data = df, aes(x = num.rs, y = Height)) +
            label = label.r,
            parse = TRUE, size = 12, family = "Helvetica") +
   scale_x_continuous(name = "萌芽本数", breaks = c(0, 4, 8)) + scale_y_continuous(name = "", limits = c(0, 25), breaks = seq(0, 25, 10)) +
-    theme(text = element_text(family = "Japan1GothicBBB", size = 36),
+    theme(text = element_text(family = "Japan1GothicBBB", size = 46),
 #         axis.title = element_text(size = 46),
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
@@ -263,14 +265,15 @@ p3 <- ggplot(data = df, aes(x = AUC.Value, y = Height)) +
            colour = "black",
            label = label.r,
            parse = TRUE, size = 12, family = "Helvetica") +
-  scale_x_continuous(name = "株構造指数", breaks = c(0.5, 0.75, 1.0)) + scale_y_continuous(name = "樹高(m)", limits = c(0, 25), breaks = seq(0, 25, 10)) +
-      theme(text = element_text(family = "Japan1GothicBBB", size = 36),
+  scale_x_continuous(name = "株構造指数", breaks = c(0.5, 0.75, 1.0)) + scale_y_continuous(name = "", limits = c(0, 25), breaks = seq(0, 25, 10)) +
+      theme(text = element_text(family = "Japan1GothicBBB", size = 46),
 #         axis.title = element_text(size = 46),
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
 #         axis.title.y = element_text(size = 36),
 #        panel.background = element_rect(fill = "#FFFFFF10"),
-        plot.background = element_rect(fill = "#FFFFFF10"))
+        plot.background = element_rect(fill = "#FFFFFF10"),
+        axis.title.y = element_blank(), axis.text.y = element_blank())
 ### Mean height against ba.size.ratio
 cor_label(df$ba.size.ratio.old, df$Height, method = "spearman")
 p4 <- ggplot(data = df, aes(x = ba.size.ratio.old, y = Height)) +
@@ -283,7 +286,7 @@ p4 <- ggplot(data = df, aes(x = ba.size.ratio.old, y = Height)) +
            label = c(label.r),
            parse = TRUE, size = 12, family = "Helvetica") +
   scale_x_continuous(name = "萌芽幹RBA", breaks = c(0, 0.3, 0.6)) + scale_y_continuous(name = "", limits = c(0, 25), breaks = seq(0, 25, 10)) +
-      theme(text = element_text(family = "Japan1GothicBBB", size = 36),
+      theme(text = element_text(family = "Japan1GothicBBB", size = 46),
 #         axis.title = element_text(size = 46),
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
@@ -292,44 +295,47 @@ p4 <- ggplot(data = df, aes(x = ba.size.ratio.old, y = Height)) +
         plot.background = element_rect(fill = "#FFFFFF10"),
         axis.title.y = element_blank(), axis.text.y = element_blank())
 
-grid.arrange(p1, p2, p3, p4, ncol = 2)
+grid.arrange(p1, p2, p3, p4, 
+             ncol = 2, 
+             left = textGrob("樹高(m)", rot = 90, vjust = 1, gp = gpar(fontsize = 46)))
 ```
 
 ## PIC
 
 ```{r fig4_sprout_height_pic, fig.width = 8, fig.height = 8, eval = FALSE}
-theme_set(theme_classic(base_size = 16, base_family = "Helvetica"))
+theme_set(theme_classic(base_size = 12, base_family = "Helvetica"))
 lm_pic(x = df$rs.ratio, y = df$Height, tree)
 cor_label(df.pic$x, df.pic$y)
 p5 <- ggplot(data = df.pic, aes(x = x, y = y)) +
-  geom_point(size = 8) +
+  geom_point(size = 6) +
   geom_smooth(method = "lm", formula = y ~ x - 1, se = FALSE, color = "black") +
   annotate("text", x = -12, y = -5,
            colour = "black",
            label = label.r,
            parse = TRUE, size = 8, family = "Helvetica") +
-  scale_x_continuous(name = "複幹率(対比値)") + scale_y_continuous(name = "樹高(対比値)") +
-      theme(text = element_text(family = "Japan1GothicBBB", size = 36),
+  scale_x_continuous(name = "複幹率(対比値)") + scale_y_continuous(name = "") +
+      theme(text = element_text(family = "Japan1GothicBBB", size = 24),
 #         axis.title = element_text(size = 46),
-        axis.text.x = element_text(family = "Helvetica", size = 32),
-        axis.text.y = element_text(family = "Helvetica", size = 32),
+        axis.text.x = element_text(family = "Helvetica", size = 16),
+        axis.text.y = element_text(family = "Helvetica", size = 16),
 #         axis.title.y = element_text(size = 36),
 #        panel.background = element_rect(fill = "#FFFFFF10"),
-        plot.background = element_rect(fill = "#FFFFFF10"))
+        plot.background = element_rect(fill = "#FFFFFF10"),
+        axis.title.y = element_blank(), axis.text.y = element_blank())
 #### number of sprout
 lm_pic(x = df$num.rs, y = df$Height, tree)
 cor_label(df.pic$x, df.pic$y)
 p6 <- ggplot(data = df.pic, aes(x = x, y = y)) +
-  geom_point(size = 8) +
+  geom_point(size = 6) +
   geom_smooth(method = "lm", formula = y ~ x - 1, se = FALSE, color = "black") +
   annotate("text", x = -0.6, y = -5,
            colour = "black", label = label.r,
            parse = TRUE, size = 8, family = "Helvetica") +
   scale_x_continuous(name = "萌芽本数(対比値)", breaks = c(-1.5, -0.5, 0.5)) + scale_y_continuous(name = "") +
-      theme(text = element_text(family = "Japan1GothicBBB", size = 36),
+      theme(text = element_text(family = "Japan1GothicBBB", size = 24),
 #         axis.title = element_text(size = 46),
-        axis.text.x = element_text(family = "Helvetica", size = 32),
-        axis.text.y = element_text(family = "Helvetica", size = 32),
+        axis.text.x = element_text(family = "Helvetica", size = 16),
+        axis.text.y = element_text(family = "Helvetica", size = 16),
 #         axis.title.y = element_text(size = 36),
 #        panel.background = element_rect(fill = "#FFFFFF10"),
         plot.background = element_rect(fill = "#FFFFFF10"),
@@ -338,38 +344,41 @@ p6 <- ggplot(data = df.pic, aes(x = x, y = y)) +
 lm_pic(x = df$AUC.Value, y = df$Height, tree)
 cor_label(df.pic$x, df.pic$y)
 p7 <- ggplot(data = df.pic, aes(x = x, y = y)) +
-  geom_point(size = 8) +
+  geom_point(size = 6) +
   geom_smooth(method = "lm", formula = y ~ x - 1, se = FALSE, color = "black") +
   annotate("text", x = -0.05, y = -5,
            colour = "black", label = label.r,
            parse = TRUE, size = 8, family = "Helvetica") +
-  scale_x_continuous(name = "株構造指数(対比値)", breaks = seq(-0.10, 0.05, 0.05)) + scale_y_continuous("樹高(m)") +
-      theme(text = element_text(family = "Japan1GothicBBB", size = 36),
+  scale_x_continuous(name = "株構造指数(対比値)", breaks = seq(-0.10, 0.05, 0.05)) + scale_y_continuous("") +
+      theme(text = element_text(family = "Japan1GothicBBB", size = 24),
 #         axis.title = element_text(size = 46),
-        axis.text.x = element_text(family = "Helvetica", size = 32),
-        axis.text.y = element_text(family = "Helvetica", size = 32),
+        axis.text.x = element_text(family = "Helvetica", size = 16),
+        axis.text.y = element_text(family = "Helvetica", size = 16),
 #         axis.title.y = element_text(size = 36),
 #        panel.background = element_rect(fill = "#FFFFFF10"),
-        plot.background = element_rect(fill = "#FFFFFF10"))
+        plot.background = element_rect(fill = "#FFFFFF10"),
+        axis.title.y = element_blank(), axis.text.y = element_blank())
 #### BA size ratio
 lm_pic(x = df$ba.size.ratio.old, y = df$Height, tree)
 cor_label(df.pic$x, df.pic$y)
 p8 <- ggplot(data = df.pic, aes(x = x, y = y)) +
-  geom_point(size = 8) +
+  geom_point(size = 6) +
   geom_smooth(method = "lm", formula = y ~ x - 1, se = FALSE, color = "black") +
   annotate("text", x = -0.03, y = -5,
            colour = "black", label = label.r,
            parse = TRUE, size = 8, family = "Helvetica") +
   scale_x_continuous(name = "萌芽幹RBA(対比値)", breaks = seq(-0.10, 1.0, 0.10)) + scale_y_continuous(name = "") +
-      theme(text = element_text(family = "Japan1GothicBBB", size = 36),
+      theme(text = element_text(family = "Japan1GothicBBB", size = 24),
 #         axis.title = element_text(size = 46),
-        axis.text.x = element_text(family = "Helvetica", size = 32),
-        axis.text.y = element_text(family = "Helvetica", size = 32),
+        axis.text.x = element_text(family = "Helvetica", size = 16),
+        axis.text.y = element_text(family = "Helvetica", size = 16),
 #         axis.title.y = element_text(size = 36),
 #        panel.background = element_rect(fill = "#FFFFFF10"),
         plot.background = element_rect(fill = "#FFFFFF10"),
         axis.title.y = element_blank(), axis.text.y = element_blank())
 
-grid.arrange(p5, p6, p7, p8, ncol = 2)
+grid.arrange(p5, p6, p7, p8, 
+             ncol = 2,
+             left = textGrob("樹高(対比値)", rot = 90, vjust = 1, gp = gpar(fontsize = 24)))
 ```
 
