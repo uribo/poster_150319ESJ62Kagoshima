@@ -1,10 +1,10 @@
-\documentclass[a0, 30pt, plainboxedsections]{sciposter} % Available size are 14, 17, 20, 25, 30, 36...
+\documentclass[a0, 36pt, plainboxedsections]{sciposter} % Available size are 14, 17, 20, 25, 30, 36...
 % draft, final
 \usepackage{zxjatype} \setjamainfont{YuGo-Medium} %YuGo-Medium
 \usepackage{otf}
 \usepackage{fontspec, fontawesome}
 \usepackage[utf8]{inputenc}
-%\usepackage{geometry} \geometry{top=1cm, left=2cm, right=6cm}
+\usepackage{geometry} \geometry{top=0.5cm, left=2cm, right=6cm, bottom=5cm}
 \usepackage{amsmath, amssymb}
 \usepackage{multicol}
 \usepackage{tikz}
@@ -23,8 +23,8 @@
 \usepackage[T1]{fontenc}
 
 %\renewcommand{\rmdefault}{qtm} % serif font
-%\renewcommand{\titlesize}{\Huge}
-\renewcommand{\authorsize}{\Large} % title, author, inst
+\renewcommand{\titlesize}{\Huge}
+\renewcommand{\authorsize}{\large} % title, author, inst
 \renewcommand{\baselinestretch}{1.2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % define color
@@ -77,42 +77,41 @@
 \vspace{-2em}
 \begin{multicols}{2}
 \begin{mdframed}[style=section.frame]
-  \centering\LARGE\textbf{\color{white}{はじめに}}
+  \flushleft\LARGE\textbf{\color{white}{はじめに}}
 \end{mdframed}
 
-\vspace{-0.6em}\subsection*{目的: 安定した成熟林を構成する樹種を対象に、\\\hspace*{10em}株構造と他の形質との関係を明らかにする}
+\vspace{-0.6em}\subsection*{目的: 安定した成熟林を構成する樹種を対象に、\\\hspace*{6em}株構造と他の形質との関係を明らかにする}
 
-樹木の株構造(樹高、幹の本数・太さ)の違いは種内間でみられる {\footnotesize(Escandón \textit{et al.} 2013; Bay \textit{et al.} 2014)}が、\textbf{\underline{群集内での種間の株構造と共存機構のつながり}}は不明
+株構造(幹のサイズ、本数)は種内間で異なる {\tiny(Escandón \textit{et al.} 2013; Bay \textit{et al.} 2014)}が、\textbf{\underline{群集内での株構造と共存機構のつながりは不明}}
+
+\subsection*{仮説: 複数の幹をもつ種は...}
 
 \vspace{-0.6em}\begin{figure}
- \begin{minipage}{0.6\hsize}
- \subsection*{仮説: 複数の幹をもつ種は...}
-  \ding{192} 単幹で生育する種よりも\underline{\textbf{樹高が低く}}なる
-  
-  \ding{193} 株内の\underline{\textbf{自己被陰を軽減する葉群配置}}を行う
- \end{minipage}
  \begin{minipage}{0.4\hsize}
   \centering
-   \includegraphics[scale=0.6]{images/sprout_merit_demerit.pdf}  
+   \includegraphics[scale=0.6]{images/tmp}  
+ \end{minipage}
+ \begin{minipage}{0.6\hsize}
+  \ding{192}単幹で生育する種よりも\underline{\textbf{樹高が低い}}\\
+  \ding{193}株内の\underline{\textbf{自己被陰を軽減する}}\\\hspace*{10.5em}\underline{\textbf{葉群配置を行う}}
  \end{minipage}
 \end{figure}
 
 \columnbreak
-\begin{mdframed}[style=conclusion.frame,frametitle={\textbf{\Large{\faFlagAlt \vspace{0.02em} 結論: {萌芽性は樹高と背反的に進化しており、\\\hspace*{2.8em}群集の中に多様な萌芽性をもつ種が存在する}}}}]
+\begin{mdframed}[style=conclusion.frame,frametitle={\textbf{\Large{萌芽性は樹高と背反的に進化しており、\\\hspace*{1em}群集の中に多様な萌芽性の種が存在する}}}]
   \vspace{0.4em}
   \flushleft
   \normalsize{
-  \textbf{結果\ding{192}多くの種が複数の幹をもつ; 結果\ding{193}萌芽性と樹高はトレードオフ}
+  \textbf{\ding{192}多くの種が複数の幹をもつ; \ding{193}萌芽性と樹高はトレードオフ}
   
     \faCaretRight 高木種では萌芽幹をもたないか、わずかな大きさでしかない
     
     \faCaretRight 萌芽性がより強い種では株内の幹による自己被陰を軽減する
     
-    \faCaretRight この傾向は対象とした種の\textbf{系統的偏りによって生じた偽相関ではない}
+    \faCaretRight この傾向は対象種の\textbf{系統的偏りにより生じた偽相関ではない}
   }
-  
-  \vspace{0.4em}
-  \faHandLeft 群集内で「\textbf{\underline{より上層で光を獲得する}}」と「\textbf{\underline{下層でより効率的に光を}} \textbf{\underline{受ける}}」の戦略分化があり
+  %\vspace{0.4em}
+  \faHandLeft 群集内で、\\\textbf{\underline{より上層で光を獲得する}}と\textbf{\underline{下層でより効率的に光を受ける}} の戦略分化があり
   、\textbf{\underline{萌芽性は後者の戦術として進化}}している
  
 \end{mdframed}
@@ -120,13 +119,12 @@
 \end{multicols}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{mdframed}[style=section.frame]
-  \centering\LARGE\textbf{\color{white}{方法}}
+  \flushleft\LARGE\textbf{\color{white}{方法}}
 \end{mdframed}\vspace{-1.2em}
 
 \begin{multicols}{2}
 
-% minipage にすると脚注がポスター下につかないのでwrapfigで対応
-\begin{wrapfigure}{r}{16.7em}
+\begin{wrapfigure}{r}{12em}
   \centering
     \includegraphics[scale=0.27]{/Users/uri/Dropbox/LAB/Research/2013Structure_of_Multi-stemmed_Trees/Slide/talk_150206WS/images/kn25species.pdf} %3.0
 \end{wrapfigure}
@@ -137,36 +135,40 @@
 
 \faCaretRight ３標高地点にプロット(1.0ha)を設置
 
-\faCaretRight 胸高直径 5cm以上の毎木調査\footnote{プロットの設置、毎木調査は東京農業大学　武生、澤田(現在、鹿児島大学)、国士舘大学　磯谷、横浜国立大学　吉田らの調査による}
+\faCaretRight 胸高直径(DBH) 5cm以上の毎木調査\footnote{プロットの設置、毎木調査は武生(東京農業大学), 澤田(東京農業大学, 現在は鹿児島大学), 磯谷(国士舘大学), 吉田(横浜国立大学)らの調査による}
 
-\subsection*{対象対象: 14科17属25種}
+\subsection*{調査対象: 14科17属25種}
 
 \faCaretRight １プロット内で20個体以上出現した種
 
-\faCaretRight 各種の個体数が最も多いプロットで胸高直径上位60から90\%の個体を抽出
+\faCaretRight 個体数が最多となるプロットでのDBH上位60から90\%個体
 
-\faCaretRight \textbf{\underline{系統独立対比}}: 系統関係に依存した形質値の偽相関を対比値を用いて検証\footnote{系統データはAPG I\hspace{-1pt}I\hspace{-1pt}Iのデータベース (R20120829.new \url{https://github.com/camwebb/tree-of-trees/blob/master/megatrees/R20120829.new}をもとにPhylomatic (Webb and Donoghue 2005 \url{http://phylodiversity.net/phylomatic/})にて作成}
+\faCaretRight \textbf{\underline{系統独立対比}}: 系統に依存した形質の偽相関を対比値により検証\footnote{系統データはAPG I\hspace{-1pt}I\hspace{-1pt}Iのデータベース (R20120829.new \url{https://github.com/camwebb/tree-of-trees/blob/master/megatrees/R20120829.new}をもとにPhylomatic (Webb and Donoghue 2005 \url{http://phylodiversity.net/phylomatic/})にて作成}
 
 \columnbreak
 \subsection*{測定項目: 幹のサイズ、萌芽幹の被陰状態}
 
+\vspace{-1em}
 \begin{figure}
   \centering
-	\includegraphics[scale=0.7]{images/stem_type_define.pdf}
+	\includegraphics[scale=0.65]{images/stem_type_define.pdf}
 \end{figure}
 
-\vspace{-1.8em}\begin{figure}
- \begin{minipage}{0.6\hsize}
- \subsection*{株構造の定量化: \uruby{株構造指数}{Stool Structure Index(SSI)} \tiny(Uryu \textit{et al.} unpublished)}
+\vspace{-1.5em}
+\subsection*{株構造の定量化: \uruby{株構造指数}{Stool Structure Index(SSI)} \scriptsize(Uryu \textit{et al.} unpublished)}
 
-個体 ㈱\footnote{\textbf{㈱は株式会社の略ではない}\\\hspace*{1.6em}\textbf{萌芽㈲}も有限会社の略ではなく、\textbf{萌芽幹を有する}、を示す}の中でBAが大きい順に並べる
+\vspace{-1.0em}
+\begin{figure}
+ \begin{minipage}{0.55\hsize}
+
+個体㈱\footnote{\textbf{㈱は株式会社の略ではない}. \textbf{萌芽㈲}も有限会社の略ではなく、\textbf{萌芽幹を有する}を示す}内でBAが大きい順に並べる
 
 \textbf{\underline{0.5 最小値}}: \textbf{すべての幹が同じ太さ}
 
 \textbf{\underline{1.0 最大値}}: \textbf{主幹のみ}
  \end{minipage}
- \begin{minipage}{0.4\hsize}
-  \centering
+ \begin{minipage}{0.45\hsize}
+  \vspace{-0.8em}\flushright
    \includegraphics[scale=1.0]{images/ex_stool_structure_index.pdf}  
  \end{minipage}
 \end{figure}
@@ -174,12 +176,12 @@
 \end{multicols}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{mdframed}[style=section.frame]
-  \centering\LARGE\textbf{\color{white}{結果}}
+  \flushleft\LARGE\textbf{\color{white}{結果}}
 \end{mdframed}\vspace{-1.2em}
 
 \begin{multicols}{2}
 
-\begin{mdframed}[style=subsection.frame,frametitle={\textbf{\huge{\ding{192}}\LARGE{25種の株構造は種間で大きく異なる}}}]
+\begin{mdframed}[style=subsection.frame,frametitle={\textbf{\huge{\ding{192}}\LARGE{株構造は種間で大きく異なる}}}]
 
 \vspace{-1.0em}
 \begin{figure}
@@ -188,43 +190,34 @@
 \end{figure}
 
 \vspace{-1em}
-\faCaretRight \textbf{複幹率}{\small: 萌芽幹を持っている個体の割合} 43.43$\pm$36.02 {\small (25種の平均値と標準偏差)}
+\faCaretRight \textbf{複幹率}{\small(萌芽幹を持っている個体の割合): 平均}\textbf{43.43$\pm$}{\small 標準偏差}\textbf{36.02}
 
-\hspace*{4.5em}{\large \faHandLeft \textbf{\underline{0から100\%と幅広い多様性}}}
+\hspace*{1.0em}\faHandLeft \textbf{\underline{0から100\%と幅広い多様性}}
 
-{\small
-\hspace*{4.5em}複幹なしの種: ブナ, ケヤキ, オオモミジ, ヒメシャラ, イヌシデ (すべて落葉樹)
+\faCaretRight \textbf{株構造指数}: \textbf{0.89$\pm$0.12} {\small(萌芽㈲個体のみで計算)}
 
-%\hspace*{4.5em}\faCaretRight 複幹率100\%の種: チドリノキ, アブラチャン
-}
-
-\faCaretRight \textbf{萌芽本数}: 4.24$\pm$3.47 {\small(萌芽㈲個体のみで計算した平均値と標準偏差)}
-
-\faCaretRight \textbf{株構造指数}: 0.89$\pm$0.12 {\small(萌芽㈲個体のみで計算)}
-
-\hspace*{4.5em}{\large \faHandLeft \textbf{\underline{多くの萌芽幹は主幹に対して相対的に小さい}}}
-
-\faCaretRight \textbf{萌芽幹RBA}: 0.23$\pm$0.25 {\small(萌芽㈲個体のみで計算)}
+\hspace*{1.0em}\faHandLeft \textbf{\underline{多くの萌芽幹は主幹に対して相対的に小さい}}
 
 \end{mdframed}
 
-\begin{mdframed}[style=subsection.frame,frametitle=\textbf{\huge{\ding{194}}\LARGE{萌芽性が強い種ほど自己被陰率が下がる}}]
+\begin{mdframed}[style=subsection.frame,frametitle=\textbf{\huge{\ding{194}}\LARGE{萌芽性が強いほど自己被陰を回避}}]
 
-\vspace{-0.5em}
+\vspace{-1.0em}
 \begin{figure}
  \begin{minipage}{0.25\hsize}
   \centering
-   \includegraphics[scale=0.5]{images/original/fig2_sprout_stem_shading_condition-1}
+   \includegraphics[scale=0.45]{images/original/fig2_sprout_stem_shading_condition-1}
    
-  \vspace{-0.4em}\flushleft 
+  %\vspace{-0.4em}
+  \flushleft 
     {\tiny \textcolor[HTML]{4D4D4D}{\faStop} 被陰なし\\
     \textcolor[HTML]{C0C0C0}{\faStop} 他個体による被陰\\
     \vspace{-1.6em}\textcolor[HTML]{FFFFFF}{\faStop} 自個体内の他幹による被陰}
  \end{minipage}
  \begin{minipage}{0.75\hsize}
   \centering
-   \includegraphics[scale=.5]{images/original/fig3_sprout_shoot_self_shade-1}
-   \includegraphics[scale=.5]{images/original/fig3_sprout_shoot_self_shade_pic-1}
+   \includegraphics[scale=0.5]{images/original/fig3_sprout_shoot_self_shade-1}
+   \includegraphics[scale=0.5]{images/original/fig3_sprout_shoot_self_shade_pic-1}
    
    \flushleft\vspace{-1em}\hspace*{0.6em}
     {\tiny \textcolor[HTML]{F9B04F}{\faCircle}: 落葉樹; \textcolor[HTML]{469B9A}{\faCircle}: 常緑樹.
@@ -235,27 +228,27 @@
 \end{mdframed}
 
 \columnbreak
-\begin{mdframed}[style=subsection.frame,frametitle=\textbf{\huge{\ding{193}}\LARGE{萌芽性が強くなるほど樹高が低くなる}}]
+\begin{mdframed}[style=subsection.frame,frametitle=\textbf{\huge{\ding{193}}\LARGE{萌芽性が強くなるほど樹高が低下}}]
 
 \vspace{-1.0em}
 \begin{figure}
 	\centering
-		\includegraphics[scale=1.0]{images/original/fig4_sprout_height-1}
+		\includegraphics[scale=.94]{images/original/fig4_sprout_height-1}
 	
-	\vspace{-0.4em}\flushleft
+	\vspace{-1.0em}\flushleft
 		\hspace*{2.6em}{\footnotesize \textcolor[HTML]{F9B04F}{\faCircle}: 落葉樹; \textcolor[HTML]{469B9A}{\faCircle}: 常緑樹.
 		\hspace{0.6em}Spearmanの順位相関 \textit{P} < 0.01: **; \textit{P} < 0.001: ***}
 \end{figure}
 
 \vspace{-1.0em}
 \begin{figure}
- \begin{minipage}{0.55\hsize}
+ \begin{minipage}{0.5\hsize}
   \centering
-   \includegraphics[scale=0.86]{images/original/fig4_sprout_height_pic-1}
+   \includegraphics[scale=0.8]{images/original/fig4_sprout_height_pic-1}
    
    \vspace{-1.0em}{\tiny \textit{P} > 0.05: ns; \textit{P} < 0.05: *; \textit{P} < 0.01: **; \textit{P} < 0.001: ***}
  \end{minipage}
- \begin{minipage}{0.45\hsize}
+ \begin{minipage}{0.5\hsize}
 {\large \faHandLeft \textbf{\underline{萌芽性と樹高の関係は}}\\ \textbf{\underline{系統的偏りによるもの}}\\\textbf{\underline{ではない}}}
  \end{minipage}
 \end{figure}
