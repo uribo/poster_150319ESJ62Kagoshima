@@ -70,18 +70,15 @@ source("~/Dropbox/git/Data-analyses/life-history_traits_and_stool_structure/Func
 
 ```{r fig1_phylogeny_and_trait, fig.width = 8, fig.height = 8, eval = FALSE}
 tree <- read.tree("/Users/uri/Dropbox/git/Data-analyses/Data-information/kn25phylo_ultrametric.txt")
-read.csv("/Users/uri/Dropbox/git/Data-analyses/Data-information/KN25information.csv", header = TRUE) %>% 
-  arrange(Phylo.Order) %>% 
-  select(Jp.Species) %$% Jp.Species %>% as.character() -> tree$tip.label # tip.labelを和名に
-
+tree$tip.label <- paste(toupper(substring(tree$tip.label, 1, 1)), substring(tree$tip.label, 2), sep = "") # 学名表示
 trait <- read.csv("/Users/uri/Dropbox/git/Data-analyses/life-history_traits_and_stool_structure/Data/KNUT_observation_summary.csv", header = TRUE) %>% 
   arrange(Phylo.Order) %>% 
-  select(Abbreviation, 複幹率 = rs.ratio, 萌芽本数 = num.rs, 株構造指数 = AUC.Value, 萌芽幹RBA = ba.size.ratio.old)  
-#  select(Abbreviation, 萌芽幹RBA = ba.size.ratio.old, 株構造指数 = AUC.Value, 萌芽本数 = num.rs, 複幹率 = rs.ratio) # 順番が入れ替わる場合用
+  select(Abbreviation, "Sprout ratio" = rs.ratio, "Number of sprout" = num.rs, SSI = AUC.Value, "Sprout RBA" = ba.size.ratio.old)
 
 kn25 <- phylobase::phylo4d(tree, trait) # make a phylo4d object
 
 #quartzFonts(YuGo = quartzFont(rep("YuGo-Medium", 4)))
+par(family = "serif")
 table.phylo4d(kn25, treetype = "phylogram", symbol = "circles", 
               center = TRUE, 
               box = FALSE, 
@@ -104,39 +101,34 @@ df.trait <- read.csv("/Users/uri/Dropbox/git/Data-analyses/life-history_traits_a
 df <- inner_join(df.tmp, df.trait, by = "Abbreviation") %>% 
   droplevels()
 rank.mean.h <- with(df, reorder(Abbreviation, Hmax, median))
-幹の被陰状況 <- table(rank.mean.h, df$Overhead) # 各種のCPIをカテゴリーで分ける
-幹の被陰状況 <- t(幹の被陰状況) # 行列の入れ替え
-stem.n <- apply(幹の被陰状況, 2, sum)
-cat1 <- 幹の被陰状況[1, ] / stem.n * 100; cat2 <- 幹の被陰状況[2, ] / stem.n * 100; cat3 <- 幹の被陰状況[3, ] / stem.n * 100
+shade.cat <- table(rank.mean.h, df$Overhead) # 各種のCPIをカテゴリーで分ける
+shade.cat <- t(shade.cat) # 行列の入れ替え
+stem.n <- apply(shade.cat, 2, sum)
+cat1 <- shade.cat[1, ] / stem.n * 100
+cat2 <- shade.cat[2, ] / stem.n * 100
+cat3 <- shade.cat[3, ] / stem.n * 100
 df.shade <- rbind(cat1, cat2, cat3)
-row.names(df.shade) <- c("自個体による被陰", "他個体による被陰", "被陰なし")
- 
-df.shade <- as.data.frame(t(df.shade)) %>% gather(key = 幹の被陰状況)
+
+df.shade <- as.data.frame(t(df.shade)) %>% gather(key = shade.cat)
+
 df.shade$Abbreviation <- rep(levels(rank.mean.h), 3) # shade.categoryの数だけ繰り返す
 
 df.shade$Abb2 <- factor(df.shade$Abbreviation, 
                         c("Aj", "Pv", "Ej", "Ic", "Sc", "Ns", "Oh", "Ia", "Lp", "Ci",
                           "Ac", "Im", "Ad", "Cy", "Na", "Qs", "Qa"))
-df.shade$Jp.Species  <- c("アオキ", "カマツカ", "ヒサカキ", "イヌツゲ", "タンナサワフタギ", "シロダモ", "ヒイラギ", 
-                          "シキミ", "アブラチャン", "マメザクラ", "チドリノキ", "アオハダ", "カジカエデ", 
-                          "ヤブニッケイ", "イヌガシ", "ウラジロガシ", "アカガシ") %>% 
-  as.character() %>% 
-  factor(c("アオキ", "カマツカ", "ヒサカキ", "イヌツゲ", "タンナサワフタギ", "シロダモ", "ヒイラギ", 
-                          "シキミ", "アブラチャン", "マメザクラ", "チドリノキ", "アオハダ", "カジカエデ", 
-                          "ヤブニッケイ", "イヌガシ", "ウラジロガシ", "アカガシ"))
 #######*****#######*****#######*****#######***
 theme_set(theme_classic(base_size = 24, base_family = "Helvetica")) 
-ggplot(df.shade, aes(x = Jp.Species, y = value, fill = 幹の被陰状況)) +
+ggplot(df.shade, aes(x = Abb2, y = value, fill = shade.cat)) +
   geom_bar(stat = "identity", colour = "#000000") +
   guides(fill = FALSE, colour = FALSE) + #  guide_legend(reverse = TRUE)
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, size = 18),
-        text = element_text(family = "Japan1GothicBBB", size = 36),
+        text = element_text(family = "Helvetica", size = 36),
 #        axis.title = element_text(size = 46),
         axis.text.x = element_text(family = "Helvetica"),
         axis.text.y = element_text(family = "Helvetica", size = 22),
 #        panel.background = element_rect(fill = "#FFFFFF10"),
         plot.background = element_rect(fill = "#FFFFFF10")) +
-  xlab("") + ylab("萌芽幹の被陰状態") +
+  xlab("") + ylab("Sprout shading") +
   scale_fill_grey(start = 1.0, end = 0.3)
 ```
 
@@ -170,8 +162,8 @@ ggplot(data = df, aes(x = AUC.Value, y = shade.c1)) +
            colour = "black",
            label = label.r,
            parse = TRUE, size = 16, family = "Helvetica") +
-  scale_x_continuous("株構造指数", breaks = seq(0.5, 1.0, 0.25)) + ylab("萌芽幹の自己被陰率") +
-  theme(text = element_text(family = "Japan1GothicBBB", size = 40),
+  scale_x_continuous("SSI", breaks = seq(0.5, 1.0, 0.25)) + ylab("Sprout shading") +
+  theme(text = element_text(family = "Helvetica", size = 40),
         axis.title = element_text(size = 54),
         axis.text.x = element_text(family = "Helvetica", size = 36),
         axis.text.y = element_text(family = "Helvetica", size = 36),
@@ -191,8 +183,8 @@ ggplot(data = df.pic, aes(x = x, y = y)) +
            label = label.r,
            parse = TRUE, size = 16, family = "Helvetica") +
   scale_x_continuous(breaks = seq(-0.05, 0.05, 0.05)) + 
-  xlab("株構造指数(対比値)") + ylab("萌芽幹の自己被陰率(対比値)") +
-  theme(text = element_text(family = "Japan1GothicBBB"),
+  xlab("SSI(contrasts)") + ylab("Sprout shading(contrasts)") +
+  theme(text = element_text(family = "Helvetica"),
         axis.title = element_text(size = 54),
         axis.text.x = element_text(family = "Helvetica", size = 36),
         axis.text.y = element_text(family = "Helvetica", size = 36),
@@ -225,8 +217,8 @@ p1 <- ggplot(data = df, aes(x = rs.ratio, y = Height)) +
            colour = "black",
            label = label.r,
            parse = TRUE, size = 12, family = "Helvetica") +
-  scale_x_continuous(name = "複幹率", breaks = seq(0, 100, 50)) + scale_y_continuous(name = "", limits = c(0, 25), breaks = seq(0, 25, 10)) +
-    theme(text = element_text(family = "Japan1GothicBBB", size = 46),
+  scale_x_continuous(name = "Sprout ratio", breaks = seq(0, 100, 50)) + scale_y_continuous(name = "", limits = c(0, 25), breaks = seq(0, 25, 10)) +
+    theme(text = element_text(family = "Helvetica", size = 46),
 #         axis.title = element_text(size = 46),
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
@@ -245,8 +237,8 @@ p2 <- ggplot(data = df, aes(x = num.rs, y = Height)) +
            colour = "black",
            label = label.r,
            parse = TRUE, size = 12, family = "Helvetica") +
-  scale_x_continuous(name = "萌芽本数", breaks = c(0, 4, 8)) + scale_y_continuous(name = "", limits = c(0, 25), breaks = seq(0, 25, 10)) +
-    theme(text = element_text(family = "Japan1GothicBBB", size = 46),
+  scale_x_continuous(name = "Number of sprout", breaks = c(0, 4, 8)) + scale_y_continuous(name = "", limits = c(0, 25), breaks = seq(0, 25, 10)) +
+    theme(text = element_text(family = "Helvetica", size = 46),
 #         axis.title = element_text(size = 46),
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
@@ -265,8 +257,8 @@ p3 <- ggplot(data = df, aes(x = AUC.Value, y = Height)) +
            colour = "black",
            label = label.r,
            parse = TRUE, size = 12, family = "Helvetica") +
-  scale_x_continuous(name = "株構造指数", breaks = c(0.5, 0.75, 1.0)) + scale_y_continuous(name = "", limits = c(0, 25), breaks = seq(0, 25, 10)) +
-      theme(text = element_text(family = "Japan1GothicBBB", size = 46),
+  scale_x_continuous(name = "SSI", breaks = c(0.5, 0.75, 1.0)) + scale_y_continuous(name = "", limits = c(0, 25), breaks = seq(0, 25, 10)) +
+      theme(text = element_text(family = "Helvetica", size = 46),
 #         axis.title = element_text(size = 46),
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
@@ -285,8 +277,8 @@ p4 <- ggplot(data = df, aes(x = ba.size.ratio.old, y = Height)) +
            colour = "black",
            label = c(label.r),
            parse = TRUE, size = 12, family = "Helvetica") +
-  scale_x_continuous(name = "萌芽幹RBA", breaks = c(0, 0.3, 0.6)) + scale_y_continuous(name = "", limits = c(0, 25), breaks = seq(0, 25, 10)) +
-      theme(text = element_text(family = "Japan1GothicBBB", size = 46),
+  scale_x_continuous(name = "Sprout RBA", breaks = c(0, 0.3, 0.6)) + scale_y_continuous(name = "", limits = c(0, 25), breaks = seq(0, 25, 10)) +
+      theme(text = element_text(family = "Helvetica", size = 46),
 #         axis.title = element_text(size = 46),
         axis.text.x = element_text(family = "Helvetica", size = 32),
         axis.text.y = element_text(family = "Helvetica", size = 32),
@@ -297,7 +289,7 @@ p4 <- ggplot(data = df, aes(x = ba.size.ratio.old, y = Height)) +
 
 grid.arrange(p1, p2, p3, p4, 
              ncol = 2, 
-             left = textGrob("樹高(m)", rot = 90, vjust = 1, gp = gpar(fontsize = 46)))
+             left = textGrob("Height (m)", rot = 90, vjust = 1, gp = gpar(fontsize = 46)))
 ```
 
 ## PIC
